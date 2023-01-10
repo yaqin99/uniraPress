@@ -17,44 +17,57 @@
         <!-- Responsive navbar-->
         @include('component.navbar')
         <!-- Header-->
-        <header class=" py-5">
-            <div class="container px-10">
-                <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
-                    <div class="carousel-inner">
-                      <div class="carousel-item active" data-bs-interval="2000">
-                        <img src="https://images.theconversation.com/files/357681/original/file-20200911-18-gfr1ae.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=926&fit=clip" class="d-block 100" alt="...">
-                      </div>
-                      <div class="carousel-item" data-bs-interval="2000">
-                        <img src="https://duniaperpustakaan.com/wp-content/uploads/2010/08/fungi-perpustakaan-1023x525.jpg" class="d-block w-100" alt="...">
-                      </div>
-                     
+        <header class="bg-dark py-5">
+            <div class="container px-5">
+                <div class="row gx-5 justify-content-center">
+                    <div class="col-lg-6">
+                        <div class="text-center my-5">
+                            <h1 class="display-5 fw-bolder text-white mb-2">Universitas Madura Press</h1>
+                            <p class="lead text-white-50 mb-4">Perpustakaan Universitas Madura menyediakan berbagai macam bacaaan agar dapat dinikmati bersama</p>
+                            <div class="d-grid gap-3 d-sm-flex justify-content-sm-center">
+                                {{-- <a class="btn btn-primary btn-lg px-4 me-sm-3" href="#features">Get Started</a> --}}
+                                <a class="btn btn-outline-light btn-lg px-4" href="#!">Lebih Banyak</a>
+                            </div>
+                        </div>
                     </div>
-                   
-                  </div>
+                </div>
             </div>
         </header>
         <!-- Features section-->
         <section class="py-5 border-bottom" id="berita">
             <div class="container px-5 my-5">
                 <div class="row gx-5">
-
-                    @foreach($books as $a)
-                    <div class="col-lg-4 mb-5 mb-lg-10">
-
+                    <div class="col-lg-4 mb-5 mb-lg-0">
+                    <div class="card" style="width: 18rem;">
+                        <img src="https://ychef.files.bbci.co.uk/976x549/p07b4k75.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title">BANYAKNYA BUKU BARU YANG DATANG DI PERPUSTAKAAN</h5>
+                          <p class="card-text"><i class="bi bi-calendar"></i> Senin, 24 April 2023</p>
+                          <a href="#" class="btn btn-primary">Baca</a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-lg-4 mb-5 mb-lg-0">
                         <div class="card" style="width: 18rem;">
                             <img src="https://ychef.files.bbci.co.uk/976x549/p07b4k75.jpg" class="card-img-top" alt="...">
                             <div class="card-body">
-                              <h5 class="card-title">{{ $a->nama_buku }}</h5>
+                              <h5 class="card-title">BANYAKNYA BUKU BARU YANG DATANG DI PERPUSTAKAAN</h5>
                               <p class="card-text"><i class="bi bi-calendar"></i> Senin, 24 April 2023</p>
                               <a href="#" class="btn btn-primary">Baca</a>
                             </div>
                           </div>
                         </div>
-                    @endforeach
-                   
+                        <div class="col-lg-4 mb-5 mb-lg-0">
+                            <div class="card" style="width: 18rem;">
+                                <img src="https://ychef.files.bbci.co.uk/976x549/p07b4k75.jpg" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                  <h5 class="card-title">BANYAKNYA BUKU BARU YANG DATANG DI PERPUSTAKAAN</h5>
+                                  <p class="card-text"><i class="bi bi-calendar"></i> Senin, 24 April 2023</p>
+                                  <a href="#" class="btn btn-primary">Baca</a>
+                                </div>
+                              </div>
+                            </div>
                 </div>
-                   
-                       
             </div>
         </section>
         <!-- Pricing section-->
@@ -248,18 +261,46 @@
                               </tr>
                             </thead>
                             <tbody>
-                              @foreach($books as $book )
                               <tr>
-                                <th scope="row">{{ $loop->index + 1}}</th>
-                                <td>{{ $book['nama_buku'] }}</td>
-                                <td>{{ $book['nama_kategori'] }}</td>
-                                <td>{{ $book['penerbit'] }}</td>
-                                <td>{{ $book['tanggal'] }}</td>
-                                <td><a href="/" class="btn btn-warning">View</a></td>
+                                <th scope="row">1</th>
+                                <td>Vue 3 Module</td>
+                                <td>Web Programing</td>
+                                <td>Fahrosi Angger Kelana</td>
+                                <td>12 Februari 2023</td>
+                                <td><a href="/" class="btn btn-warning">Download</a></td>
                               </tr>
-                              @endforeach
-                            
-                             
+                              <tr>
+                                <th scope="row">2</th>
+                                <td>The Power of Electricity</td>
+                                <td>Basic Knowledge</td>
+                                <td>Nicholas Tesla/td>
+                                <td>21 April 2023</td>
+                                <td><a href="/" class="btn btn-warning">Download</a></td>
+                              </tr>
+                              <tr>
+                                <th scope="row">3</th>
+                                <td>Express JS Mobule</td>
+                                <td>Web Programing</td>
+                                <td>Aldi Firmansyah</td>
+                                <td>05 Februari 2022</td>
+                                <td><a href="/" class="btn btn-warning">Download</a></td>
+                              </tr>
+                              <tr>
+                                <th scope="row">4</th>
+                                <td>Flutter Tutorial Basic</td>
+                                <td>Mobile App Programing</td>
+                                <td>Dody Ardiansyahh</td>
+                                <td>01 Februari 2022</td>
+                                <td><a href="/" class="btn btn-warning">Download</a></td>
+                              </tr>
+                              <tr>
+                                <th scope="row">5</th>
+                                <td>11 Hari di Langit Eropa</td>
+                                <td>Novels</td>
+                                <td>Widdy Anggreni</td>
+                                <td>08 Desember 2019</td>
+                                <td><a href="/" class="btn btn-warning">Download</a></td>
+                              </tr>
                               
                             </tbody>
                           </table>
@@ -272,8 +313,8 @@
             <div class="container px-5 my-5 px-5">
                 <div class="text-center mb-5">
                     <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-envelope"></i></div>
-                    <h2 class="fw-bolder">Pengajuan Buku</h2>
-                    <p class="lead mb-0">Ajukan buku yang ingin anda baca</p>
+                    <h2 class="fw-bolder">Saran dan Masukan</h2>
+                    <p class="lead mb-0">Masukan anda adalah penyemangat kami</p>
                 </div>
                 <div class="row gx-5 justify-content-center">
                     <div class="col-lg-6">
@@ -281,28 +322,28 @@
                         <form id="contactForm" data-sb-form-api-token="API_TOKEN">
                             <!-- Name input-->
                             <div class="form-floating mb-3">
-                                <input class="form-control" id="name" type="text" placeholder="Masukan nama lengkap ..." data-sb-validations="required" />
-                                <label for="name">Nama Pengaju</label>
-                                <div class="invalid-feedback" data-sb-feedback="name:required">Nama harus diisi</div>
+                                <input class="form-control" id="name" type="text" placeholder="Enter your name..." data-sb-validations="required" />
+                                <label for="name">Nama Lengkap</label>
+                                <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
                             </div>
                             <!-- Email address input-->
                             <div class="form-floating mb-3">
                                 <input class="form-control" id="email" type="email" placeholder="name@example.com" data-sb-validations="required,email" />
                                 <label for="email">Email</label>
-                                <div class="invalid-feedback" data-sb-feedback="email:required">Email harus diisi</div>
-                                <div class="invalid-feedback" data-sb-feedback="email:email">Email tidak valid</div>
+                                <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
+                                <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
                             </div>
                             <!-- Phone number input-->
-                            <div class="form-floating mb-3">
+                            {{-- <div class="form-floating mb-3">
                                 <input class="form-control" id="phone" type="tel" placeholder="(123) 456-7890" data-sb-validations="required" />
-                                <label for="phone">Nama Buku</label>
-                                <div class="invalid-feedback" data-sb-feedback="phone:required">Nama Buku harus diisi.</div>
-                            </div>
+                                <label for="phone">Phone number</label>
+                                <div class="invalid-feedback" data-sb-feedback="phone:required">A phone number is required.</div>
+                            </div> --}}
                             <!-- Message input-->
                             <div class="form-floating mb-3">
                                 <textarea class="form-control" id="message" type="text" placeholder="Enter your message here..." style="height: 10rem" data-sb-validations="required"></textarea>
-                                <label for="message">Deskripsi</label>
-                                <div class="invalid-feedback" data-sb-feedback="message:required">Deskripsi harus diisi</div>
+                                <label for="message">Pesan</label>
+                                <div class="invalid-feedback" data-sb-feedback="message:required">A message is required.</div>
                             </div>
                             <!-- Submit success message-->
                             <!---->

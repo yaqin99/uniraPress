@@ -6,8 +6,7 @@
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                 <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">Beranda</a></li>
                 <li class="nav-item"><a class="nav-link" href="#berita">Berita</a></li>
-                <li class="nav-item"><a class="nav-link" href="#!">Dokumen</a></li>
-                <li class="nav-item"><a class="nav-link" href="#!">Penerbit</a></li>
+                <li class="nav-item"><a class="nav-link" href="#buku">Buku</a></li>
                 <li class="nav-item"><a class="nav-link" href="#kontak">Kontak</a></li>
             </ul>
         </div>
