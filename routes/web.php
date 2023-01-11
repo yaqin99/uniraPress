@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BukuController;
 
@@ -17,8 +18,7 @@ use App\Http\Controllers\BukuController;
 Route::get('/',[BukuController::class , 'index']);
 
 
-Route::get('/admin', function () {
-    return view('admin/adminDashboard');
-});
-
+Route::get('/admin', [AdminController::class , 'homeAdmin']);
+Route::post('/addBook' , [BukuController::class , 'addBook']);
+Route::get('/deleteBuku/{id}' , [BukuController::class , 'deleteBuku']);
 
