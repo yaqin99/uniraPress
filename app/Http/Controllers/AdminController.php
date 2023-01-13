@@ -13,4 +13,7 @@ class AdminController extends Controller
             'books' => Buku::all()
         ]);
     }
+    public function loginAdmin(){
+        return view('admin.loginAdmin');
+    }
 }

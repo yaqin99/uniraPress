@@ -36,6 +36,11 @@
         <!-- Features section-->
         <section class="py-5 border-bottom" id="berita">
             <div class="container px-5 my-5">
+                <div class="d-flex justify-content-end">
+
+                    {{ $books->links() }}
+                </div>
+
                 <div class="row gx-5">
 
                     @foreach($books as $a)
@@ -225,9 +230,9 @@
                     <div class="col-lg-6  ">
                         <!-- Testimonial 1-->
                         
-                        <form class="d-flex mb-10">
-                            <input class="form-control me-2" type="search" placeholder="Temukan buku ..." aria-label="Search">
-                            <button class="btn btn-primary" type="submit">Cari</button>
+                        <form class="d-flex mb-10" action="/" method="GET">
+                            <input autocomplete="off" class="form-control me-2" value="{{ request('search') }}" type="text" placeholder="Temukan buku ..." name="search" aria-label="Search">
+                            <button class="btn btn-primary"  type="submit">Cari</button>
                           </form>
                         <!-- Testimonial 2-->
                       
@@ -252,17 +257,18 @@
                               <tr>
                                 <th scope="row">{{ $loop->index + 1}}</th>
                                 <td>{{ $book['nama_buku'] }}</td>
-                                <td>{{ $book['nama_kategori'] }}</td>
+                                <td>{{ $book->kategoriBuku->nama_kategori}}</td>
                                 <td>{{ $book['penerbit'] }}</td>
                                 <td>{{ $book['tanggal'] }}</td>
                                 <td><a href="/" class="btn btn-warning">View</a></td>
                               </tr>
                               @endforeach
                             
-                             
                               
                             </tbody>
                           </table>
+                          {{ $books->links() }}
+
                     </div>
                 </div>
             </div>

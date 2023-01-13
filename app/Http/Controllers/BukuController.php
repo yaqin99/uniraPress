@@ -10,9 +10,29 @@ class BukuController extends Controller
 {
     
     public function index (){
+
+        // dd(request('search'));
+
+        // $buku = ;
+
+       
         return view('home' , [
             'title' => 'home' , 
-            'books' => Buku::all(),
+            'books' => Buku::with('kategoriBuku')->SearchBook()->paginate(3)->withQueryString(),
+
+        ]);
+    }
+    public function indexAdmin (){
+
+        // dd(request('search'));
+
+        // $buku = ;
+
+       
+        return view('home' , [
+            'title' => 'home' , 
+            'books' => Buku::with('kategoriBuku')->SearchBook()->get(),
+
         ]);
     }
 

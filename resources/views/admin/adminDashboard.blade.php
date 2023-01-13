@@ -21,10 +21,10 @@
             <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
             <!-- Navbar Search-->
             <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
-                <div class="input-group">
+                {{-- <div class="input-group">
                     <input class="form-control" type="text" placeholder="Search for..." aria-label="Search for..." aria-describedby="btnNavbarSearch" />
                     <button class="btn btn-primary" id="btnNavbarSearch" type="button"><i class="fas fa-search"></i></button>
-                </div>
+                </div> --}}
             </form>
             <!-- Navbar-->
             <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
@@ -95,7 +95,7 @@
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid px-4">
-                        <h1 class="mt-4">Data Buku</h1>
+                        <h1 class="align-middle mt-4">Data Buku</h1>
                         {{-- <ol class="breadcrumb mb-4">
                             <li class="breadcrumb-item active">Dashboard</li>
                         </ol> --}}
@@ -125,13 +125,18 @@
                             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                         </div>
                     @endif
-                  
-                        <button class="btn btn-success mb-3" data-bs-toggle="modal" data-bs-target="#modalTambahBuku">Tambah Buku</button>
+                        <div class="row justify-content-end">
+                            <div class="col-md-2">
+                                <button class="btn btn-success mb-3" data-bs-toggle="modal" data-bs-target="#modalTambahBuku">Tambah Buku</button>
+
+                            </div>
+
+                        </div>
                         <div class="modal fade" id="modalTambahBuku" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog">
                               <div class="modal-content">
                                 <div class="modal-header">
-                                  <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                  <h5 class="modal-title" id="exampleModalLabel">Tambah Buku</h5>
                                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
@@ -227,7 +232,7 @@
                                             <td>{{ $loop->index +1 }}</td>
                                             <td>{{ $headache->nama_buku }}</td>
                                             <td>{{ $headache->penerbit }}</td>
-                                            <td>{{ $headache->kategori_buku_id }}</td>
+                                            <td>{{ $headache->kategoriBuku->nama_kategori }}</td>
                                             <td>{{ $headache->tanggal }}</td>
                                             <td>   <a href="" class="btn btn-wanrning"><i class="fas fa-edit"></i></a>  <a href="/deleteBuku/{{ $headache->id }}" class="btn btn-wanrning"><i class="fas fa-trash"></i></a> </td>
                                            
