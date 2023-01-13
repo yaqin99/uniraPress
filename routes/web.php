@@ -17,6 +17,8 @@ use App\Http\Controllers\BukuController;
 
 Route::get('/',[BukuController::class , 'index']);
 Route::get('/login', [AdminController::class , 'loginAdmin']);
+Route::get('/register', [AdminController::class , 'adminSignUp']);
+Route::post('/register', [AdminController::class , 'registerAdmin']);
 
 
 Route::get('/admin', [AdminController::class , 'homeAdmin']);

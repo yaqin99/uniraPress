@@ -41,7 +41,7 @@
                                         </form>
                                     </div>
                                     <div class="card-footer text-center py-3">
-                                        <div class="small">Belum punya akun? <a href="register.html">Di sini</a></div>
+                                        <div class="small">Belum punya akun? <a href="/register">Di sini</a></div>
                                     </div>
                                 </div>
                             </div>
