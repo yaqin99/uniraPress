@@ -18,7 +18,7 @@ class BukuController extends Controller
        
         return view('home' , [
             'title' => 'home' , 
-            'books' => Buku::with('kategoriBuku')->SearchBook()->paginate(3)->withQueryString(),
+            'books' => Buku::with('kategoriBuku')->SearchBook()->paginate(8)->withQueryString(),
 
         ]);
     }

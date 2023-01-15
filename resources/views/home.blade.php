@@ -11,7 +11,7 @@
         <!-- Bootstrap icons-->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
         <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="css/styles.css" rel="stylesheet" />
+        <link href="/css/styles.css" rel="stylesheet" />
     </head>
     <body>
         <!-- Responsive navbar-->
@@ -22,10 +22,11 @@
                 <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner">
                       <div class="carousel-item active" data-bs-interval="2000">
-                        <img src="https://images.theconversation.com/files/357681/original/file-20200911-18-gfr1ae.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=926&fit=clip" class="d-block 100" alt="...">
-                      </div>
+                        <img src="https://www.swic.edu/wp-content/uploads/2017/09/LIBRARY-0677-002-e1580929246594.jpg" class="d-block w-100" alt="...">
+                        
+                    </div>
                       <div class="carousel-item" data-bs-interval="2000">
-                        <img src="https://duniaperpustakaan.com/wp-content/uploads/2010/08/fungi-perpustakaan-1023x525.jpg" class="d-block w-100" alt="...">
+                        <img src="https://duniaperpustakaan.com/wp-content/uploads/2010/08/fungi-perpustakaan-1023x525.jpg" style="width: 80%" class="d-block w-100 " alt="...">
                       </div>
                      
                     </div>
@@ -34,7 +35,23 @@
             </div>
         </header>
         <!-- Features section-->
-        <section class="py-5 border-bottom" id="berita">
+        <section class="py-5 border-bottom" id="buku">
+            <div class="row gx-10 justify-content-center " >
+                <div class="text-center mb-5">
+                    <h2 class="fw-bolder">Temukan Buku yang anda cari</h2>
+                    {{-- <p class="lead mb-0">Our customers love working with us</p> --}}
+                </div>
+            <div class="col-lg-6  ">
+                <!-- Testimonial 1-->
+                
+                <form class="d-flex mb-10" action="/" method="GET">
+                    <input autocomplete="off" class="form-control me-2" value="{{ request('search') }}" type="text" placeholder="Temukan buku ..." name="search" aria-label="Search">
+                    <button class="btn btn-primary"  type="submit">Cari</button>
+                  </form>
+                <!-- Testimonial 2-->
+              
+            </div>
+            </div>
             <div class="container px-5 my-5">
                 <div class="d-flex justify-content-end">
 
@@ -44,7 +61,7 @@
                 <div class="row gx-5">
 
                     @foreach($books as $a)
-                    <div class="col-lg-4 mb-5 mb-lg-10">
+                    <div class="col-lg-3 mb-5 mb-lg-10">
 
                         <div class="card" style="width: 18rem;">
                             <img src="https://ychef.files.bbci.co.uk/976x549/p07b4k75.jpg" class="card-img-top" alt="...">
@@ -219,12 +236,9 @@
             </div>
         </section> --}}
         <!-- Testimonials section-->
-        <section class="py-5 border-bottom " id="buku" >
+        {{-- <section class="py-5 border-bottom " id="buku" >
             <div class="container px-5 my-5 px-5">
-                <div class="text-center mb-5">
-                    <h2 class="fw-bolder">Temukan Buku yang anda cari</h2>
-                    {{-- <p class="lead mb-0">Our customers love working with us</p> --}}
-                </div>
+               
                 <div class="row gx-10 justify-content-center " >
                     
                     <div class="col-lg-6  ">
@@ -240,7 +254,7 @@
                     <div class="container" style="height: 30px">
 
                     </div>
-                    <div class="col-lg-10 ">
+                    {{-- <div class="col-lg-10 ">
                         <table class="table ">
                             <thead>
                               <tr>
@@ -269,10 +283,10 @@
                           </table>
                           {{ $books->links() }}
 
-                    </div>
+                    </div> --}}
                 </div>
             </div>
-        </section>
+        </section> --}}
         <!-- Contact section-->
         <section class="bg-light py-5" id="kontak">
             <div class="container px-5 my-5 px-5">

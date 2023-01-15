@@ -18,16 +18,17 @@
                         <div class="row justify-content-center">
                             <div class="col-lg-5">
                                 <div class="card shadow-lg border-0 rounded-lg mt-5">
+                                   
                                     <div class="card-header"><h3 class="text-center font-weight-light my-4"><img style="width: 15%" src="favicon.png" alt=""></h3></div>
                                     <div class="card-body">
-                                        <form action="login">
+                                        <form action="/login" method="post">
                                             @csrf
                                             <div class="form-floating mb-3">
-                                                <input class="form-control" id="inputUsername" name="username" type="text" placeholder="Masukan Username" />
+                                                <input class="form-control @error('username') is-invalid @enderror" id="inputUsername" name="username" autofocus type="text" required placeholder="Masukan Username" />
                                                 <label for="inputUsername">Username</label>
                                             </div>
                                             <div class="form-floating mb-3">
-                                                <input class="form-control" id="inputPassword" name="password" type="password" placeholder="Password" />
+                                                <input class="form-control" id="inputPassword" name="password" required type="password" placeholder="Password" />
                                                 <label for="inputPassword">Password</label>
                                             </div>
                                             <div class="form-check mb-3">
@@ -36,7 +37,7 @@
                                             </div>
                                             <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
                                                 <a class="small" href="password.html">Forgot Password?</a>
-                                                <button class="btn btn-primary" href="index.html">Login</button>
+                                                <button class="btn btn-primary" type="submit" >Login</button>
                                             </div>
                                         </form>
                                     </div>
