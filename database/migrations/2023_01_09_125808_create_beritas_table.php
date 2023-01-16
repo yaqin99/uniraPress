@@ -20,6 +20,8 @@ class CreateBeritasTable extends Migration
             $table->timestamp('tanggal')->nullable();
             $table->foreignId('admin_id');
             $table->foreignId('kategori_berita_id');
+            $table->string('image')->nullable();
+
             $table->timestamps();
         });
     }

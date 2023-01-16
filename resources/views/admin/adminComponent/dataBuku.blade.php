@@ -11,7 +11,7 @@
         <div class="modal-body">
 
            
-            <form action="addBook" method="POST">
+            <form action="addBook" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="mb-3">
                   <label for="exampleInputEmail1" class="form-label">Nama Buku</label>
@@ -28,6 +28,13 @@
                     @enderror</span>
                 </div>
                 <div class="mb-3">
+                  <label for="images" class="form-label">Image</label>
+                  <input id="images"  autocomplete="off" type="file" class="form-control" name="image" >
+                  <span style="color:red">@error('image'){{ $message }}
+                    
+                    @enderror</span>
+                </div>
+                <div class="mb-3">
                   <label for="exampleInputPassword1" class="form-label">Pilih Kategori</label>
                   <select class="form-select" name="kategori"  aria-label="Default select example">
                    
@@ -39,6 +46,7 @@
                     
                   </select>
                 </div>
+               
                
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

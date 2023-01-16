@@ -10,11 +10,18 @@ use Illuminate\Support\Facades\DB;
 class NewsController extends Controller
 {
     public function addNews(Request $request){
-        $request->validate([
+       $validatedData = $request->validate([
             'judulBerita' => 'required' , 
             'isiBerita' => 'required' , 
             'kategori' => 'required' , 
+            'foto' => 'image|file|max:5024',
+
         ]);
+        if ($request->file('foto')) {
+            $request->file('foto')->store('fotoBerita');
+            $validatedData['foto'] = $request->file('foto')->store('fotoBerita');
+         }
+ 
 
         $query = DB::table('beritas')->insert([
             'judul_berita' =>$request->input('judulBerita'), 
@@ -22,6 +29,8 @@ class NewsController extends Controller
             'tanggal' => Carbon::now(),
             'admin_id' => 1 , 
             'kategori_berita_id' =>$request->input('kategori'),
+            'image' => $validatedData['foto'],
+
         ]);
 
         if($query){

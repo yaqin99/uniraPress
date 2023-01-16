@@ -35,6 +35,35 @@
             </div>
         </header>
         <!-- Features section-->
+        <section class="py-5 border-bottom" id="berita">
+         
+            <div class="container px-5 my-5">
+                <div class="d-flex justify-content-end">
+
+                    {{ $news->links() }}
+                </div>
+
+                <div class="row gx-5">
+
+                    @foreach($news as $a)
+                    <div class="col-lg-6 mb-5 mb-lg-10">
+
+                        <div class="card" style="width: 38rem;">
+                            <img src="{{ asset('storage/' . $a->image) }}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                              <h5 class="card-title">{{ $a->judul_berita }}</h5>
+                              <p class="card-text">{{ $a->isi_berita }}</p>
+                              <a href="#" class="btn btn-primary">Baca Selengkapnya ></a>
+                            </div>
+                          </div>
+                        </div>
+                    @endforeach
+                   
+                </div>
+                   
+                       
+            </div>
+        </section>
         <section class="py-5 border-bottom" id="buku">
             <div class="row gx-10 justify-content-center " >
                 <div class="text-center mb-5">
@@ -57,16 +86,14 @@
 
                     {{ $books->links() }}
                 </div>
-
                 <div class="row gx-5">
-
-                    @foreach($books as $a)
+                    @foreach($books as $post)
                     <div class="col-lg-3 mb-5 mb-lg-10">
 
                         <div class="card" style="width: 18rem;">
-                            <img src="https://ychef.files.bbci.co.uk/976x549/p07b4k75.jpg" class="card-img-top" alt="...">
+                            <img src="{{ asset('storage/' . $post->image) }}" class="card-img-top" alt="Gambar Tidak Muncul">
                             <div class="card-body">
-                              <h5 class="card-title">{{ $a->nama_buku }}</h5>
+                              <h5 class="card-title">{{ $post->nama_buku }}</h5>
                               <p class="card-text"><i class="bi bi-calendar"></i> Senin, 24 April 2023</p>
                               <a href="#" class="btn btn-primary">Baca</a>
                             </div>
@@ -286,7 +313,7 @@
                     </div> --}}
                 </div>
             </div>
-        </section> --}}
+        </section> 
         <!-- Contact section-->
         <section class="bg-light py-5" id="kontak">
             <div class="container px-5 my-5 px-5">

@@ -19,6 +19,7 @@ class CreateBukusTable extends Migration
             $table->string('penerbit');
             $table->foreignId('kategori_buku_id');
             $table->timestamp('tanggal')->nullable();
+            $table->string('image')->nullable();
             $table->timestamps();
         });
     }

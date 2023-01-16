@@ -11,7 +11,7 @@
         <div class="modal-body">
 
            
-            <form action="addNews" method="POST">
+            <form action="addNews" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="mb-3">
                   <label  class="form-label">Judul Berita</label>
@@ -24,6 +24,13 @@
                   <label class="form-label">Isi Berita</label>
                   <textarea name="isiBerita" required class="form-control" cols="30" rows="10" ></textarea>
                   <span style="color:red">@error('isiBerita'){{ $message }}
+                    
+                    @enderror</span>
+                </div>
+                <div class="mb-3">
+                  <label for="foto" class="form-label">Image</label>
+                  <input id="foto"  autocomplete="off" type="file" class="form-control" name="foto" >
+                  <span style="color:red">@error('foto'){{ $message }}
                     
                     @enderror</span>
                 </div>
