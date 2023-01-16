@@ -11,18 +11,18 @@
         <div class="modal-body">
 
            
-            <form action="addBook" method="POST">
+            <form action="addNews" method="POST">
                 @csrf
                 <div class="mb-3">
                   <label  class="form-label">Judul Berita</label>
-                  <input autocomplete="off" type="text" class="form-control" name="judulBerita" " aria-describedby="emailHelp" value="{{ old('namaBuku') }}">
-                  <span style="color:red">@error('namaBuku'){{ $message }}
+                  <input autocomplete="off" required type="text" class="form-control" name="judulBerita" value="{{ old('judulBerita') }}">
+                  <span style="color:red">@error('JudulBerita'){{ $message }}
                     
                   @enderror</span>
                 </div>
                 <div class="mb-3">
                   <label class="form-label">Isi Berita</label>
-                  <textarea name="isiBerita" class="form-control" cols="30" rows="10" ></textarea>
+                  <textarea name="isiBerita" required class="form-control" cols="30" rows="10" ></textarea>
                   <span style="color:red">@error('isiBerita'){{ $message }}
                     
                     @enderror</span>

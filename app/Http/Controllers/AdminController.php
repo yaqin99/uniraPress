@@ -50,6 +50,23 @@ class AdminController extends Controller
 
         }
     }
+    public function addKategoriBerita(Request $req){
+
+        $req->validate([
+            'namaKategoriBerita' => 'required'
+        ]);
+
+        $query = DB::table('kategori_beritas')->insert([
+            'nama_kategori' => $req->input('namaKategoriBerita'),
+        ]);
+
+        if($query){
+            return back()->with('success' , 'Data Berhasil di Tambahkan');
+        }else {
+            return back('fail' , 'Data Gagal di Tambahkan');
+
+        }
+    }
     public function registerAdmin(Request $req){
 
         $req->validate([
