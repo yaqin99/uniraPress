@@ -6,6 +6,7 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Models\Buku;
 use App\Models\Berita;
+use App\Models\PengajuanBuku;
 use Illuminate\Support\Facades\DB;
 class BukuController extends Controller
 {
@@ -21,6 +22,8 @@ class BukuController extends Controller
             'title' => 'home' , 
             'books' => Buku::with('kategoriBuku')->SearchBook()->paginate(8)->withQueryString(),
             'news' => Berita::with('kategoriBerita')->SearchNews()->paginate(4)->withQueryString(),
+            'pengajuan' => PengajuanBuku::all(),
+
 
         ]);
     }

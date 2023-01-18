@@ -5,6 +5,7 @@ use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BukuController;
 use App\Http\Controllers\NewsController;
+use App\Http\Controllers\PengajuanController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,5 +32,6 @@ Route::get('/admin/dataBerita', [AdminController::class , 'dataBerita']);
 
 Route::post('/addBook' , [BukuController::class , 'addBook']);
 Route::post('/admin/addNews' , [NewsController::class , 'addNews']);
+Route::post('/addPengajuan' , [PengajuanController::class , 'addPengajuan']);
 Route::get('/deleteBuku/{id}' , [BukuController::class , 'deleteBuku']);
 
