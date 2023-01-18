@@ -17,8 +17,8 @@
         <!-- Responsive navbar-->
         @include('component.navbar')
         <!-- Header-->
-        <header class=" py-5">
-            <div class="container px-10">
+        <header class=" ">
+            <div class="container-fluid ">
                 <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner">
                       <div class="carousel-item active" data-bs-interval="2000">
@@ -107,57 +107,65 @@
             </div>
         </section>
         <!-- Pricing section-->
-        {{-- <section class="bg-light py-5 border-bottom">
+        <section class="bg-light py-5 border-bottom">
             <div class="container px-5 my-5">
                 <div class="text-center mb-5">
-                    <h2 class="fw-bolder">Jadilah Member</h2>
-                    <p class="lead mb-0">Dapatkan keuntungan sebagai member premium</p>
+                    <h2 class="fw-bolder">Pengajuan Buku</h2>
+                    {{-- <p class="lead mb-0">Dapatkan keuntungan sebagai member premium</p> --}}
                 </div>
                 <div class="row gx-5 justify-content-center">
                     <!-- Pricing card free-->
                     <div class="col-lg-6 col-xl-4">
                         <div class="card mb-5 mb-xl-0">
+                                <h3 class="text-center mt-10">Formulir Pengajuan</h3>
+                            
                             <div class="card-body p-5">
-                                <div class="small text-uppercase fw-bold text-muted">Free</div>
-                                <div class="mb-3">
-                                    <span class="display-4 fw-bold">Rp. 0</span>
-                                    <span class="text-muted">/ mo.</span>
-                                </div>
-                                <ul class="list-unstyled mb-4">
-                                    <li class="mb-2">
-                                        <i class="bi bi-check text-primary"></i>
-                                        <strong>1 users</strong>
-                                    </li>
-                                    <li class="mb-2">
-                                        <i class="bi bi-check text-primary"></i>
-                                        5GB storage
-                                    </li>
-                                    <li class="mb-2">
-                                        <i class="bi bi-check text-primary"></i>
-                                        Unlimited public projects
-                                    </li>
-                                    <li class="mb-2">
-                                        <i class="bi bi-check text-primary"></i>
-                                        Community access
-                                    </li>
-                                    <li class="mb-2 text-muted">
-                                        <i class="bi bi-x"></i>
-                                        Unlimited private projects
-                                    </li>
-                                    <li class="mb-2 text-muted">
-                                        <i class="bi bi-x"></i>
-                                        Dedicated support
-                                    </li>
-                                    <li class="mb-2 text-muted">
-                                        <i class="bi bi-x"></i>
-                                        Free linked domain
-                                    </li>
-                                    <li class="text-muted">
-                                        <i class="bi bi-x"></i>
-                                        Monthly status reports
-                                    </li>
-                                </ul>
-                                <div class="d-grid"><a class="btn btn-outline-primary" href="#!">Choose plan</a></div>
+                                <form id="contactForm" data-sb-form-api-token="API_TOKEN">
+                                    <!-- Name input-->
+                                    <div class="form-floating mb-3">
+                                        <input class="form-control" id="name" type="text" placeholder="Masukan nama lengkap ..." data-sb-validations="required" />
+                                        <label for="name">Nama Pengaju</label>
+                                        <div class="invalid-feedback" data-sb-feedback="name:required">Nama harus diisi</div>
+                                    </div>
+                                    <!-- Email address input-->
+                                    <div class="form-floating mb-3">
+                                        <input class="form-control" id="email" type="email" placeholder="name@example.com" data-sb-validations="required,email" />
+                                        <label for="email">Email</label>
+                                        <div class="invalid-feedback" data-sb-feedback="email:required">Email harus diisi</div>
+                                        <div class="invalid-feedback" data-sb-feedback="email:email">Email tidak valid</div>
+                                    </div>
+                                    <!-- Phone number input-->
+                                    <div class="form-floating mb-3">
+                                        <input class="form-control" id="phone" type="tel" placeholder="(123) 456-7890" data-sb-validations="required" />
+                                        <label for="phone">Nama Buku</label>
+                                        <div class="invalid-feedback" data-sb-feedback="phone:required">Nama Buku harus diisi.</div>
+                                    </div>
+                                    <!-- Message input-->
+                                    <div class="form-floating mb-3">
+                                        <textarea class="form-control" id="message" type="text" placeholder="Enter your message here..." style="height: 10rem" data-sb-validations="required"></textarea>
+                                        <label for="message">Deskripsi</label>
+                                        <div class="invalid-feedback" data-sb-feedback="message:required">Deskripsi harus diisi</div>
+                                    </div>
+                                    <!-- Submit success message-->
+                                    <!---->
+                                    <!-- This is what your users will see when the form-->
+                                    <!-- has successfully submitted-->
+                                    <div class="d-none" id="submitSuccessMessage">
+                                        <div class="text-center mb-3">
+                                            <div class="fw-bolder">Form submission successful!</div>
+                                            To activate this form, sign up at
+                                            <br />
+                                            <a href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
+                                        </div>
+                                    </div>
+                                    <!-- Submit error message-->
+                                    <!---->
+                                    <!-- This is what your users will see when there is-->
+                                    <!-- an error submitting the form-->
+                                    <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
+                                    <!-- Submit Button-->
+                                    <div class="d-grid"><button class="btn btn-primary btn-lg disabled" id="submitButton" type="submit">Submit</button></div>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -261,7 +269,7 @@
                     </div>
                 </div>
             </div>
-        </section> --}}
+        </section>
         <!-- Testimonials section-->
         {{-- <section class="py-5 border-bottom " id="buku" >
             <div class="container px-5 my-5 px-5">
@@ -325,52 +333,7 @@
                 <div class="row gx-5 justify-content-center">
                     <div class="col-lg-6">
                        
-                        <form id="contactForm" data-sb-form-api-token="API_TOKEN">
-                            <!-- Name input-->
-                            <div class="form-floating mb-3">
-                                <input class="form-control" id="name" type="text" placeholder="Masukan nama lengkap ..." data-sb-validations="required" />
-                                <label for="name">Nama Pengaju</label>
-                                <div class="invalid-feedback" data-sb-feedback="name:required">Nama harus diisi</div>
-                            </div>
-                            <!-- Email address input-->
-                            <div class="form-floating mb-3">
-                                <input class="form-control" id="email" type="email" placeholder="name@example.com" data-sb-validations="required,email" />
-                                <label for="email">Email</label>
-                                <div class="invalid-feedback" data-sb-feedback="email:required">Email harus diisi</div>
-                                <div class="invalid-feedback" data-sb-feedback="email:email">Email tidak valid</div>
-                            </div>
-                            <!-- Phone number input-->
-                            <div class="form-floating mb-3">
-                                <input class="form-control" id="phone" type="tel" placeholder="(123) 456-7890" data-sb-validations="required" />
-                                <label for="phone">Nama Buku</label>
-                                <div class="invalid-feedback" data-sb-feedback="phone:required">Nama Buku harus diisi.</div>
-                            </div>
-                            <!-- Message input-->
-                            <div class="form-floating mb-3">
-                                <textarea class="form-control" id="message" type="text" placeholder="Enter your message here..." style="height: 10rem" data-sb-validations="required"></textarea>
-                                <label for="message">Deskripsi</label>
-                                <div class="invalid-feedback" data-sb-feedback="message:required">Deskripsi harus diisi</div>
-                            </div>
-                            <!-- Submit success message-->
-                            <!---->
-                            <!-- This is what your users will see when the form-->
-                            <!-- has successfully submitted-->
-                            <div class="d-none" id="submitSuccessMessage">
-                                <div class="text-center mb-3">
-                                    <div class="fw-bolder">Form submission successful!</div>
-                                    To activate this form, sign up at
-                                    <br />
-                                    <a href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
-                                </div>
-                            </div>
-                            <!-- Submit error message-->
-                            <!---->
-                            <!-- This is what your users will see when there is-->
-                            <!-- an error submitting the form-->
-                            <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
-                            <!-- Submit Button-->
-                            <div class="d-grid"><button class="btn btn-primary btn-lg disabled" id="submitButton" type="submit">Submit</button></div>
-                        </form>
+                        
                     </div>
                 </div>
             </div>
