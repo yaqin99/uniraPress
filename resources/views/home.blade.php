@@ -8,6 +8,7 @@
         <title>Unira Press</title>
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="assets/icon.ico" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
         <!-- Bootstrap icons-->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
         <!-- Core theme CSS (includes Bootstrap)-->
@@ -176,59 +177,44 @@
                                         
                                     <li class="mb-2">
                                         <i class="bi bi-check text-primary"></i>
-                                        {{ $pe->nama_buku }}
+                                        {{ $pe->nama_buku. ' ' .'('.$pe->status.')' }}
                                     </li>
                                     @endforeach
                                 </ul>
-                                <div class="d-grid"><a class="btn btn-primary" href="#!">Choose plan</a></div>
                             </div>
                         </div>
                     </div>
                     <!-- Pricing card enterprise-->
                     <div class="col-lg-6 col-xl-4">
                         <div class="card">
+                            <h3 class="text-center mt-10 ">Prosedur</h3>
+
                             <div class="card-body p-5">
-                                <div class="small text-uppercase fw-bold text-muted">Enterprise</div>
-                                <div class="mb-3">
-                                    <span class="display-4 fw-bold">$49</span>
-                                    <span class="text-muted">/ mo.</span>
-                                </div>
+                                
                                 <ul class="list-unstyled mb-4">
+                                    
                                     <li class="mb-2">
-                                        <i class="bi bi-check text-primary"></i>
-                                        <strong>Unlimited users</strong>
-                                    </li>
-                                    <li class="mb-2">
-                                        <i class="bi bi-check text-primary"></i>
-                                        5GB storage
+                                        <i class="bi bi-1-circle-fill"></i>
+                                        Melakukan Registrasi
                                     </li>
                                     <li class="mb-2">
-                                        <i class="bi bi-check text-primary"></i>
-                                        Unlimited public projects
+                                        <i class="bi bi-2-circle-fill"></i>
+                                        Login Sebagai User
                                     </li>
                                     <li class="mb-2">
-                                        <i class="bi bi-check text-primary"></i>
-                                        Community access
+                                        <i class="bi bi-3-circle-fill"></i>
+                                       Mengisi Formulir Pengajuan
                                     </li>
                                     <li class="mb-2">
-                                        <i class="bi bi-check text-primary"></i>
-                                        Unlimited private projects
+                                        <i class="bi bi-4-circle-fill"></i>
+                                        Menunggu Acc dari Admin
                                     </li>
                                     <li class="mb-2">
-                                        <i class="bi bi-check text-primary"></i>
-                                        Dedicated support
+                                        <i class="bi bi-5-circle-fill"></i>
+                                        Pengajuan Selesai
                                     </li>
-                                    <li class="mb-2">
-                                        <i class="bi bi-check text-primary"></i>
-                                        <strong>Unlimited</strong>
-                                        linked domains
-                                    </li>
-                                    <li class="text-muted">
-                                        <i class="bi bi-check text-primary"></i>
-                                        Monthly status reports
-                                    </li>
+                                   
                                 </ul>
-                                <div class="d-grid"><a class="btn btn-outline-primary" href="#!">Choose plan</a></div>
                             </div>
                         </div>
                     </div>

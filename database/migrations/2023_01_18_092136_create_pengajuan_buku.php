@@ -20,6 +20,7 @@ class CreatePengajuanBuku extends Migration
             $table->string('email');
             $table->timestamp('tanggal')->nullable();
             $table->text('deskripsi');
+            $table->string('status');
             $table->timestamps();
         });
     }

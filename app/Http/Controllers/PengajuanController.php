@@ -29,6 +29,7 @@ class PengajuanController extends Controller
             
             'tanggal' => Carbon::now(),
             'deskripsi' =>$request->input('deskripsi'),
+            'status' => 'Menunggu'
          ]);
  
          if($query){
