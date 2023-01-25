@@ -28,6 +28,13 @@
                     @enderror</span>
                 </div>
                 <div class="mb-3">
+                  <label class="form-label">Deskripsi Buku</label>
+                  <textarea name="deskripsi" required class="form-control" cols="30" rows="10" ></textarea>
+                  <span style="color:red">@error('deskripsi'){{ $message }}
+                    
+                    @enderror</span>
+                </div>
+                <div class="mb-3">
                   <label for="images" class="form-label">Image</label>
                   <input id="images"  autocomplete="off" type="file" class="form-control" name="image" >
                   <span style="color:red">@error('image'){{ $message }}

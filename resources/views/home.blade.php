@@ -18,7 +18,7 @@
         <!-- Responsive navbar-->
         @include('component.navbar')
         <!-- Header-->
-        <header class=" ">
+        <header class="mt-2">
             <div class="container-fluid ">
                 <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner">
@@ -36,7 +36,8 @@
             </div>
         </header>
         <!-- Features section-->
-        <section class="py-5 border-bottom" id="berita">
+        <div class="container-fluid">
+        <section class="py-5 border-bottom " id="berita">
          
             <div class="container px-5 my-5">
                 <div class="d-flex justify-content-end">
@@ -47,10 +48,10 @@
                 <div class="row gx-5">
 
                     @foreach($news as $a)
-                    <div class="col-lg-6 mb-5 mb-lg-10">
+                    <div class="col-lg-6 mb-5 mb-lg-5">
 
-                        <div class="card" style="width: 38rem;">
-                            <img src="{{ asset('storage/' . $a->image) }}" class="card-img-top" alt="...">
+                        <div class="card" style="width: 28rem;">
+                            <img src="{{ asset('storage/' . $a->image) }}"  class="card-img-top" alt="...">
                             <div class="card-body">
                               <h5 class="card-title">{{ $a->judul_berita }}</h5>
                               <p class="card-text">{{ $a->isi_berita }}</p>
@@ -65,25 +66,28 @@
                        
             </div>
         </section>
+    </div>
         <section class="py-5 border-bottom" id="buku">
             <div class="row gx-10 justify-content-center " >
                 <div class="text-center mb-5">
                     <h2 class="fw-bolder">Temukan Buku yang anda cari</h2>
                     {{-- <p class="lead mb-0">Our customers love working with us</p> --}}
                 </div>
-            <div class="col-lg-6  ">
-                <!-- Testimonial 1-->
+            
                 
-                <form class="d-flex mb-10" action="/" method="GET">
-                    <input autocomplete="off" class="form-control me-2" value="{{ request('search') }}" type="text" placeholder="Temukan buku ..." name="search" aria-label="Search">
-                    <button class="btn btn-primary"  type="submit">Cari</button>
-                  </form>
-                <!-- Testimonial 2-->
-              
-            </div>
+         
+           
+
             </div>
             <div class="container px-5 my-5">
-                <div class="d-flex justify-content-end">
+                <div class="col-lg-6 mb-4 justify-content-center">
+                    <form class="d-flex mb-10" action="/" method="GET">
+                        <input autocomplete="off" class="form-control  me-2" value="{{ request('search') }}" type="text" placeholder="Temukan buku ..." name="search" aria-label="Search">
+                        <button class="btn btn-primary"  type="submit">Cari</button>
+                      </form>
+    
+                </div>
+                <div class="d-flex justify-content-start">
 
                     {{ $books->links() }}
                 </div>
@@ -91,12 +95,12 @@
                     @foreach($books as $post)
                     <div class="col-lg-3 mb-5 mb-lg-10">
 
-                        <div class="card" style="width: 18rem;">
-                            <img src="{{ asset('storage/' . $post->image) }}" class="card-img-top" alt="Gambar Tidak Muncul">
+                        <div class="card" style="width: 18rem; ">
+                            <img src="{{ asset('storage/' . $post->image) }}" class="card-img-top" style="max-height:150px" alt="Gambar Tidak Muncul">
                             <div class="card-body">
                               <h5 class="card-title">{{ $post->nama_buku }}</h5>
                               <p class="card-text"><i class="bi bi-calendar"></i> Senin, 24 April 2023</p>
-                              <a href="#" class="btn btn-primary">Baca</a>
+                              <a href="/detailBuku/{{ $post->id }}" class="btn btn-primary">Baca</a>
                             </div>
                           </div>
                         </div>
@@ -274,21 +278,7 @@
             </div>
         </section> 
         <!-- Contact section-->
-        <section class="bg-light py-5" id="kontak">
-            <div class="container px-5 my-5 px-5">
-                <div class="text-center mb-5">
-                    <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-envelope"></i></div>
-                    <h2 class="fw-bolder">Pengajuan Buku</h2>
-                    <p class="lead mb-0">Ajukan buku yang ingin anda baca</p>
-                </div>
-                <div class="row gx-5 justify-content-center">
-                    <div class="col-lg-6">
-                       
-                        
-                    </div>
-                </div>
-            </div>
-        </section>
+    
         <!-- Footer-->
         <footer class="py-5 bg-dark">
             <div class="container px-5"><p class="m-0 text-center text-white">Copyright &copy; Universitas Madura 2023</p></div>

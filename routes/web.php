@@ -19,6 +19,7 @@ use App\Http\Controllers\PengajuanController;
 */
 
 Route::get('/',[BukuController::class , 'index']);
+Route::get('/detailBuku/{id}',[BukuController::class , 'detailBuku']);
 Route::get('/login', [LoginController::class,'loginAdmin']);
 Route::post('/login', [LoginController::class , 'login']);
 Route::get('/register', [AdminController::class , 'adminSignUp']);

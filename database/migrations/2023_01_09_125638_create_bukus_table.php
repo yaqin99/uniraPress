@@ -18,6 +18,7 @@ class CreateBukusTable extends Migration
             $table->string('nama_buku')->unique();
             $table->string('penerbit');
             $table->foreignId('kategori_buku_id');
+            $table->text('deskripsi');
             $table->timestamp('tanggal')->nullable();
             $table->string('image')->nullable();
             $table->timestamps();

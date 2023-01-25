@@ -27,18 +27,17 @@ class BukuController extends Controller
 
         ]);
     }
-    public function indexAdmin (){
-
-        // dd(request('search'));
-
-        // $buku = ;
-
+    public function detailBuku($id){
+        $data = Buku::find($id);
+    //    $delete =  $data->delete();
+    return view('pages.detailBuku' , [
+        'title' => 'home' , 
+        'books' => $data->with('kategoriBuku')->where('id' , $id)->get(),
+        'many' => $data->latest()->paginate(3) ,
        
-        return view('home' , [
-            'title' => 'home' , 
-            'books' => Buku::with('kategoriBuku')->SearchBook()->get(),
 
-        ]);
+    ]);
+    
     }
 
     public function addBook(Request $request){
@@ -48,6 +47,7 @@ class BukuController extends Controller
             'namaBuku' => 'required' , 
             'penerbit' => 'required' , 
             'kategori' => 'required' , 
+            'deskripsi' => 'required' , 
             'image' => 'image|file|max:5024',
         ]);
 
@@ -60,6 +60,7 @@ class BukuController extends Controller
             'nama_buku' =>$request->input('namaBuku'), 
             'penerbit'  =>$request->input('penerbit'),
             'kategori_buku_id' =>$request->input('kategori'),
+            'deskripsi' =>$request->input('deskripsi'),
             'tanggal' => Carbon::now(),
             'image' => $validatedData['image'],
         ]);
