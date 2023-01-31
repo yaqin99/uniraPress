@@ -23,11 +23,11 @@
                                         <form action="/login" method="post">
                                             @csrf
                                             <div class="form-floating mb-3">
-                                                <input class="form-control @error('username') is-invalid @enderror" id="inputUsername" name="username" autofocus type="text" required placeholder="Masukan Username" />
-                                                <label for="inputUsername">Username</label>
+                                                <input class="form-control" id="inputEmail" name="email" autofocus type="email" required  />
+                                                <label for="inputEmail">Email</label>
                                             </div>
                                             <div class="form-floating mb-3">
-                                                <input class="form-control" id="inputPassword" name="password" required type="password" placeholder="Password" />
+                                                <input class="form-control" id="inputPassword" name="password" required type="text"  />
                                                 <label for="inputPassword">Password</label>
                                             </div>
                                             <div class="form-check mb-3">

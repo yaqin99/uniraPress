@@ -10,10 +10,10 @@ use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Database\Eloquent\Model;
 
 
-class Admin extends Model {
+class Admin extends Authenticatable {
     use HasApiTokens, HasFactory, Notifiable;
 
-    use HasFactory;
+  
 
     protected $guarded = ['id'];
 

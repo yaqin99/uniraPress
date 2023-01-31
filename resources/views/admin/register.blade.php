@@ -23,29 +23,19 @@
                                         <form action="/register" method="post">
                                             @csrf
                                             <div class="form-floating mb-3">
-                                                <input autocomplete="off" class="form-control" id="inputNama" name="nama" type="text" placeholder="Masukan Nama Admin" />
+                                                <input autocomplete="off" class="form-control" id="inputNama" name="name" type="text" placeholder="Masukan Nama Admin" />
                                                 <label for="inputNama">Nama Lengkap</label>
                                             </div>
                                             <div class="form-floating mb-3">
                                                 <input autocomplete="off" class="form-control" id="inputEmail" name="email" type="email" placeholder="Masukan Email" />
                                                 <label for="inputEmail">Email</label>
                                             </div>
-                                            <div class="form-floating mb-3">
-                                                <input autocomplete="off" class="form-control" id="inputNomor" name="noHp" type="text" placeholder="Masukan Nomer Handphone" />
-                                                <label for="inputNomor">Nomor Handphone</label>
-                                            </div>
-                                            <div class="form-floating mb-3">
-                                                <input autocomplete="off" class="form-control" id="inputUsername" name="username" type="text" placeholder="Masukan Username" />
-                                                <label for="inputUsername">Username</label>
-                                            </div>
+                                          
                                             <div class="form-floating mb-3">
                                                 <input autocomplete="off" class="form-control" id="inputPassword" name="password" type="text" placeholder="Masukan Password" />
                                                 <label for="inputPassword">Password</label>
                                             </div>
-                                            <div class="form-floating mb-3">
-                                                <input autocomplete="off" class="form-control" id="inputPassword" name="confirmPassword" type="text" placeholder="Konfirmasi Password" />
-                                                <label for="inputPassword">Konfirmasi Password</label>
-                                            </div>
+                                         
                                             {{-- <div class="form-check mb-3">
                                                 <input class="form-check-input" id="inputRememberPassword" type="checkbox" value="" />
                                                 <label class="form-check-label" for="inputRememberPassword">Remember Password</label>

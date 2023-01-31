@@ -9,6 +9,7 @@ use App\Models\KategoriBuku;
 use App\Models\KategoriBerita;
 use Illuminate\Support\Facades\DB;
 use Symfony\Component\Console\Input\Input;
+use App\Models\User;
 
 class AdminController extends Controller
 {
@@ -87,6 +88,23 @@ class AdminController extends Controller
         ]);
 
         if($query){
+            return redirect('login')->with('success' , 'Data Berhasil di Tambahkan');
+        } else {
+            return back()->with('fail' , 'Data Gagal di Tambahkan');
+        }
+    }
+    public function daftarAdmin(Request $req){
+
+       $validatedData =  $req->validate([
+            'name' => 'required' , 
+            'email' => 'required',
+            'password' => 'required',
+        ]);
+
+        $validatedData['password'] = bcrypt($validatedData['password']);
+
+        $data = User::create($validatedData);
+        if($data){
             return redirect('login')->with('success' , 'Data Berhasil di Tambahkan');
         } else {
             return back()->with('fail' , 'Data Gagal di Tambahkan');

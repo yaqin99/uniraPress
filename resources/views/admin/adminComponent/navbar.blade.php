@@ -18,7 +18,10 @@
                 <li><a class="dropdown-item" href="#!">Settings</a></li>
                 <li><a class="dropdown-item" href="#!">Activity Log</a></li>
                 <li><hr class="dropdown-divider" /></li>
-                <li><a class="dropdown-item" href="#!">Logout</a></li>
+                <form action="/logout" method="post">
+                    @csrf
+                    <li><button class="dropdown-item" type="submit">Logout</button></li>
+                </form>
             </ul>
         </li>
     </ul>

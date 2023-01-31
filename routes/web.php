@@ -20,15 +20,17 @@ use App\Http\Controllers\PengajuanController;
 
 Route::get('/',[BukuController::class , 'index']);
 Route::get('/detailBuku/{id}',[BukuController::class , 'detailBuku']);
-Route::get('/login', [LoginController::class,'loginAdmin']);
-Route::post('/login', [LoginController::class , 'login']);
-Route::get('/register', [AdminController::class , 'adminSignUp']);
-Route::post('/register', [AdminController::class , 'registerAdmin']);
+//name('login) ..berarti memberi nama routes karena halaman ini auto redirect ketika ada user mencoba mengakses halaman admin
+Route::get('/login', [LoginController::class,'loginAdmin'])->name('login')->middleware('guest');
+Route::get('/register', [AdminController::class , 'adminSignUp'])->middleware('guest');
+Route::post('/register', [AdminController::class , 'daftarAdmin']);
 Route::post('/addKategori', [AdminController::class , 'addKategori']);
 Route::post('admin/addKategoriBerita' , [AdminController::class , 'addKategoriBerita']);
+Route::post('/login', [LoginController::class , 'authenticate']);
+Route::post('/logout', [LoginController::class , 'logout']);
 
 
-Route::get('/admin', [AdminController::class , 'homeAdmin']);
+Route::get('/admin', [AdminController::class , 'homeAdmin'])->middleware('auth');
 Route::get('/admin/dataBerita', [AdminController::class , 'dataBerita']);
 
 Route::post('/addBook' , [BukuController::class , 'addBook']);

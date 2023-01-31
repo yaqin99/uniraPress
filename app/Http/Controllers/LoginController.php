@@ -1,39 +1,89 @@
 <?php
 
 namespace App\Http\Controllers;
-use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\Controller ; 
 use App\Models\Admin;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Auth ; 
 
 class LoginController extends Controller
 {
-    public function cek(){
-       $nama = Admin::all()->username ; 
-       $password = Admin::all()->password;
+    //  use AuthenticatesUsers ; 
+     protected $guard = 'adminMiddle'; 
+     protected $redirectTo = '/login' ; 
 
-       if($nama === 'yaqin99' && $password === 'yaqin123'){
-            
-        return redirect('admin');
-       }
-    }
+     public function __construct()
+     {
+        $this->middleware('guest')->except('logout');
+     }
+
+     public function guard()
+     {
+        return auth()->guard('adminMiddle');
+     }
 
     public function loginAdmin(){
         return view('admin.loginAdmin');
     }
-    
+    public function loginForm(){
+        if (auth()->guard('adminMiddle')->user()) {
+           return back();
+        }
+    }
 
     public function login(Request $req){
-        $data =  $req->validate([
-             'username' => 'required' , 
+         $this->validate($req , [
+             'email' => 'required' , 
              'password' => 'required' , 
          ]);
  
-         if (Auth::guard('admin')->attempt(['username' => $req->username , 'password' => $req->password])) {
+         if (auth()->guard('adminMiddle')->attempt(['email' => $req->email , 'password' => $req->password])) {
             
- 
-             return redirect('admin');
-         }
+            dd('berhasil');
+            //  return redirect()->route('admin.adminDashboard');
+         } 
          return back()->with('gagal' , 'Gagal login');
+     }
+    public function authentication(Request $req){
+        //  $credential = $req->validate($req , [
+        //      'email' => 'required' , 
+        //      'password' => 'required' , 
+        //  ]);
+ 
+         if (Auth::attempt(['email' => $req->email , 'password' => $req->password])) {
+            $req->session()->regenerate();
+            dd('berhasil');
+            //  return redirect()->route('admin.adminDashboard');
+        } 
+        dd('Gagal ');
+        //  return back()->with('gagal' , 'Gagal login');
+     }
+     public function authenticate(Request $request)
+     {
+         $credentials = $request->validate([
+             'email' => 'required',
+             'password' => ['required'],
+         ]);
+         $login = Auth::attempt($credentials ) ; 
+         
+
+         if ($login) {
+            //  $request->session()->regenerate();
+  
+             return redirect()->intended('admin');
+         } 
+         return back()->withErrors([
+             'email' => 'The provided credentials do not match our records.',
+         ])->onlyInput('email');
+     }
+
+     public function logout(){
+        Auth::logout();
+        //$request dan request() itu sama aja 
+    request()->session()->invalidate();
+ 
+    request()->session()->regenerateToken();
+ 
+    return redirect('/');
      }
 }

@@ -400,7 +400,7 @@ a, a:hover {
             <div class="postcard__bar"></div>
             <div class="postcard__preview-txt">
               <p>Oleh <a href="/">Unira Press</a> Diposting pada {{ $a->tanggal }}</p>
-              <p><strong>Kategori :</strong>{{ $a->kategoriBuku->nama_kategori }}</p>
+              <p><strong>Kategori : </strong>{{ $a->kategoriBuku->nama_kategori }}</p>
               <p><Strong>Penerbit :</Strong> {{ $a->penerbit }}</p>
             </div>
             <div class="row">
