@@ -8,7 +8,9 @@
                 <li class="nav-item"><a class="nav-link" href="#berita">Berita</a></li>
                 <li class="nav-item"><a class="nav-link" href="#buku">Buku</a></li>
                 <li class="nav-item"><a class="nav-link" href="#pengajuan">Pengajuan</a></li>
+                <li class="nav-item"><a class="nav-link" href="/login"><i class="bi bi-person"></i> Login</a></li>
             </ul>
+            
         </div>
     </div>
 </nav>
