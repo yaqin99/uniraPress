@@ -21,6 +21,52 @@ class AdminController extends Controller
             'kategori' => KategoriBuku::all(),
         ]);
     }
+    public function editBuku($id){
+        $data = Buku::find($id);
+        return view('admin.adminComponent.updateBuku' , [
+            'books' => $data->with('kategoriBuku')->where('id' , $id)->get(),
+            
+            'kategori' => KategoriBuku::all(),
+        ]);
+    }
+    public function editBook( $id){
+        
+        $validatedData =  request()->validate([
+            'nama_buku' => 'required' , 
+            'penerbit' => 'required' , 
+            'deskripsi' => 'required' , 
+        ]);
+        $data = Buku::find($id);
+        if (request()->kategori != $data->kategori_buku_id) {
+            $validatedData['kategori_buku_id'] = request()->kategori ;
+        }
+        if (request()->kategori === null) {
+            $validatedData['kategori_buku_id'] = $data->kategori_buku_id ;
+        }
+
+        $cek = DB::table('bukus')->where('id' , $id)->update($validatedData);
+        if ($cek) {
+            # code...
+            return redirect('/admin')->with('success' , 'Data Berhasil di Update');
+        } 
+
+        return dd('gagal');
+
+
+    }
+    
+    public function tambahBuku(){
+        return view('admin.adminComponent.tambahBuku', [
+            'books' => Buku::all() , 
+            'kategori' => KategoriBuku::all(),
+        ]);
+    }
+    public function tambahKategoriBuku(){
+        return view('admin.adminComponent.tambahKategoriBuku', [
+            'books' => Buku::all() , 
+            'kategori' => KategoriBuku::all(),
+        ]);
+    }
 
     public function dataBerita(){
         return view('admin.adminComponent.dataBerita', [
@@ -28,6 +74,19 @@ class AdminController extends Controller
             'kategoriBerita' => KategoriBerita::all(),
         ]);
     }
+    public function tambahBerita(){
+        return view('admin.adminComponent.tambahBerita', [
+            'news' => Berita::all() , 
+            'kategoriBerita' => KategoriBerita::all(),
+        ]);
+    }
+    public function tambahKategoriBerita(){
+        return view('admin.adminComponent.tambahKategoriBerita', [
+            'news' => Berita::all() , 
+            'kategoriBerita' => KategoriBerita::all(),
+        ]);
+    }
+    
 
    
    

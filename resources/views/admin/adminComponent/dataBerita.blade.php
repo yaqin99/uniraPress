@@ -1,62 +1,7 @@
 @extends('admin.adminDashboard')
 
 @section('main')
-<div class="modal fade" id="modalTambahBerita" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Tambah Berita</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
 
-           
-            <form action="addNews" method="POST" enctype="multipart/form-data">
-                @csrf
-                <div class="mb-3">
-                  <label  class="form-label">Judul Berita</label>
-                  <input autocomplete="off" required type="text" class="form-control" name="judulBerita" value="{{ old('judulBerita') }}">
-                  <span style="color:red">@error('JudulBerita'){{ $message }}
-                    
-                  @enderror</span>
-                </div>
-                <div class="mb-3">
-                  <label class="form-label">Isi Berita</label>
-                  <textarea name="isiBerita" required class="form-control" cols="30" rows="10" ></textarea>
-                  <span style="color:red">@error('isiBerita'){{ $message }}
-                    
-                    @enderror</span>
-                </div>
-                <div class="mb-3">
-                  <label for="foto" class="form-label">Image</label>
-                  <input id="foto"  autocomplete="off" type="file" class="form-control" name="foto" >
-                  <span style="color:red">@error('foto'){{ $message }}
-                    
-                    @enderror</span>
-                </div>
-                <div class="mb-3">
-                  <label for="exampleInputPassword1" class="form-label">Pilih Kategori</label>
-                  <select class="form-select" name="kategori"  aria-label="Default select example">
-                   
-                    <option selected>Kategori</option>
-                    @foreach($kategoriBerita as $k)
-                    <option value="{{ $k->id }}">{{ $k->nama_kategori }}</option>
-                    @endforeach
-                    
-                    
-                  </select>
-                </div>
-               
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary" >Tambah</button>
-                  </div>
-              </form>
-        </div>
-        
-      </div>
-    </div>
-  </div>
 
   {{-- Modal Tambah Buku  --}}
 
@@ -175,7 +120,7 @@
                             <td>{{ $a->tanggal }}</td>
                             <td>{{ $a->kategori_berita_id }}</td>
                             <td>{{ $a->admin_id }}</td>
-                            <td>   <a href="" class="btn btn-wanrning"><i class="fas fa-edit"></i></a>  <a href="" class="btn btn-wanrning"><i class="fas fa-trash"></i></a> </td>
+                            <td>   <a href="/admin/editBerita/{{ $a->id }}" class="btn btn-wanrning"><i class="fas fa-edit"></i></a>  <a href="/deleteBerita/{{ $a->id }}" class="btn btn-wanrning"><i class="fas fa-trash"></i></a> </td>
                            
                         </tr>
 

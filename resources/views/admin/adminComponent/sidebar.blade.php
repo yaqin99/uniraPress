@@ -3,7 +3,7 @@
         <div class="sb-sidenav-menu">
             <div class="nav">
                 <div class="sb-sidenav-menu-heading">Home</div>
-                <a class="nav-link" href="index.html">
+                <a class="nav-link" href="/admin">
                     <div class="sb-nav-link-icon"><i class="fas fa-home"></i></div>
                    
                    Dashboard
@@ -16,10 +16,10 @@
                 </a>
                 <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                     <nav class="sb-sidenav-menu-nested nav">
-                        <a class="nav-link "  href="/admin ">Lihat Buku</a>
+                        <a class="nav-link "  href="/admin">Lihat Buku</a>
 
-                        <a class="nav-link " data-bs-toggle="modal" data-bs-target="#modalTambahBuku" href="">Tambah Buku</a>
-                        <a class="nav-link " data-bs-toggle="modal" data-bs-target="#modalTambahKategori" href="">Tambah Kategori</a>
+                        <a class="nav-link "   href="/admin/tambahBuku">Tambah Buku</a>
+                        <a class="nav-link "  href="/admin/tambahKategoriBuku">Tambah Kategori</a>
                     </nav>
                 </div>
                 
@@ -32,8 +32,8 @@
                 <div class="collapse" id="collapseBerita" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                     <nav class="sb-sidenav-menu-nested nav">
                         <a class="nav-link "  href="/admin/dataBerita">Lihat Berita</a>
-                        <a class="nav-link " data-bs-toggle="modal" data-bs-target="#modalTambahBerita" href="">Tambah Berita</a>
-                        <a class="nav-link " data-bs-toggle="modal" data-bs-target="#modalTambahKategoriBerita" href="">Tambah Kategori Berita</a>
+                        <a class="nav-link "  href="/admin/tambahBerita">Tambah Berita</a>
+                        <a class="nav-link " href="/admin/tambahKategoriBerita">Tambah Kategori Berita</a>
                     </nav>
                 </div>
                 
