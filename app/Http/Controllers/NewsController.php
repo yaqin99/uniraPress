@@ -11,6 +11,23 @@ use Illuminate\Support\Facades\DB;
 class NewsController extends Controller
 {
 
+    public function detailBerita($id){
+        $data = Berita::find($id);
+        return view('pages.detailBerita' , [
+            'news' => $data->with('kategoriBerita')->where('id' , $id)->get(),
+            'kategoriBerita' => KategoriBerita::all(),
+        ]);
+    }
+    public function news(){
+       $data =  Berita::with('kategoriBerita')->orderBy('id' , 'desc')->latest()->limit(4)->get();
+       $sliced = $data->shift();
+        return view('pages.news' , [
+            'news' => Berita::with('kategoriBerita')->get(),
+            'singleNews' => Berita::with('kategoriBerita')->orderBy('id' , 'desc')->latest()->limit(1)->get(),
+            'latestNews' => $data,
+            'kategoriBerita' => KategoriBerita::all(),
+        ]);
+    }
 
     public function editBerita($id){
         $data = Berita::find($id);

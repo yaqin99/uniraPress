@@ -5,7 +5,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                 <li class="nav-item"><a class="nav-link active" aria-current="page" href="/">Beranda</a></li>
-                <li class="nav-item"><a class="nav-link" href="#berita">Berita</a></li>
+                <li class="nav-item"><a class="nav-link" href="/news">Berita</a></li>
                 <li class="nav-item"><a class="nav-link" href="#buku">Buku</a></li>
                 <li class="nav-item"><a class="nav-link" href="#pengajuan">Pengajuan</a></li>
                 <li class="nav-item"><a class="nav-link" href="/login"><i class="bi bi-person"></i> Login</a></li>
@@ -14,3 +14,4 @@
         </div>
     </div>
 </nav>
+

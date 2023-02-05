@@ -19,7 +19,10 @@ use App\Http\Controllers\PengajuanController;
 */
 
 Route::get('/',[BukuController::class , 'index']);
+Route::get('/news',[NewsController::class , 'news']);
 Route::get('/detailBuku/{id}',[BukuController::class , 'detailBuku']);
+Route::get('/detailBerita/{id}',[NewsController::class , 'detailBerita']);
+
 //name('login) ..berarti memberi nama routes karena halaman ini auto redirect ketika ada user mencoba mengakses halaman admin
 Route::get('/login', [LoginController::class,'loginAdmin'])->name('login')->middleware('guest');
 Route::get('/register', [AdminController::class , 'adminSignUp'])->middleware('guest');

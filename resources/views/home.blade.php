@@ -12,7 +12,7 @@
         <!-- Bootstrap icons-->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
         <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="/css/styles.css" rel="stylesheet" />
+        <link href="/assets/css/styles.css" rel="stylesheet" />
     </head>
     <body>
         <!-- Responsive navbar-->
@@ -50,12 +50,15 @@
                     @foreach($news as $a)
                     <div class="col-lg-6 mb-5 mb-lg-5">
 
-                        <div class="card" style="width: 28rem;">
+                        <div class="card" style="width: 28rem; height: 34rem;">
                             <img src="{{ asset('storage/' . $a->image) }}"  class="card-img-top" alt="...">
                             <div class="card-body">
-                              <h5 class="card-title">{{ $a->judul_berita }}</h5>
-                              <p class="card-text">{{ $a->isi_berita }}</p>
-                              <a href="#" class="btn btn-primary">Baca Selengkapnya ></a>
+                                <div class="btn btn-warning mb-3 mt-3">{{ $a->kategoriBerita->nama_kategori }}</div>
+                              <h5 class="card-title mb-10">{{ $a->judul_berita }}</h5>
+                              <div class="mt-10">
+
+                                  <a href="/detailBerita/{{ $a->id }}" class="btn btn-primary">Baca Selengkapnya </a>
+                                </div>
                             </div>
                           </div>
                         </div>
@@ -93,9 +96,9 @@
                 </div>
                 <div class="row gx-5">
                     @foreach($books as $post)
-                    <div class="col-lg-3 mb-5 mb-lg-10">
+                    <div class="col-lg-3 mb-5 mb-lg-10 ">
 
-                        <div class="card" style="width: 18rem; ">
+                        <div class="card" style="width: 16rem; ">
                             <img src="{{ asset('storage/' . $post->image) }}" class="card-img-top" style="max-height:150px" alt="Gambar Tidak Muncul">
                             <div class="card-body">
                               <h5 class="card-title">{{ $post->nama_buku }}</h5>
