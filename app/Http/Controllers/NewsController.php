@@ -13,18 +13,24 @@ class NewsController extends Controller
 
     public function detailBerita($id){
         $data = Berita::find($id);
+        $fixedData =  $data->views ;
+        DB::table('beritas')->where('id' , $id)->update(['views' => $fixedData + 1 ]);
+
         return view('pages.detailBerita' , [
-            'news' => $data->with('kategoriBerita')->where('id' , $id)->get(),
+            'news' =>$data->with('kategoriBerita')->where('id' , $id)->get(),
+            
             'kategoriBerita' => KategoriBerita::all(),
         ]);
     }
     public function news(){
        $data =  Berita::with('kategoriBerita')->orderBy('id' , 'desc')->latest()->limit(4)->get();
+       $kimi =  Berita::with('kategoriBerita')->orderBy('views' , 'desc')->limit(5)->get();
        $sliced = $data->shift();
         return view('pages.news' , [
-            'news' => Berita::with('kategoriBerita')->get(),
+            'news' => Berita::with('kategoriBerita')->orderBy('id' , 'desc')->SearchNews()->paginate(2)->withQueryString(),
             'singleNews' => Berita::with('kategoriBerita')->orderBy('id' , 'desc')->latest()->limit(1)->get(),
             'latestNews' => $data,
+            'topViews' => $kimi , 
             'kategoriBerita' => KategoriBerita::all(),
         ]);
     }
@@ -59,6 +65,7 @@ class NewsController extends Controller
             'admin_id' => 1 , 
             'kategori_berita_id' =>$request->input('kategori'),
             'image' => $validatedData['foto'],
+            'views' => 0 , 
 
         ]);
 

@@ -37,7 +37,7 @@
         </header>
         <!-- Features section-->
         <div class="container-fluid">
-        <section class="py-5 border-bottom " id="berita">
+        {{-- <section class="py-5 border-bottom " id="berita">
          
             <div class="container px-5 my-5">
                 <div class="d-flex justify-content-end">
@@ -68,7 +68,7 @@
                    
                        
             </div>
-        </section>
+        </section> --}}
     </div>
         <section class="py-5 border-bottom" id="buku">
             <div class="row gx-10 justify-content-center " >
