@@ -180,8 +180,8 @@
                             <td>{{ $headache->penerbit }}</td>
                             <td>{{ $headache->kategoriBuku->nama_kategori }}</td>
                             <td>{{ $headache->tanggal }}</td>
-                            <td>   <a href="admin/editBuku/{{ $headache->id }}" class="btn btn-wanrning"><i class="fas fa-edit"></i></a>  <a href="/deleteBuku/{{ $headache->id }}" class="btn btn-wanrning"><i class="fas fa-trash"></i></a> </td>
-                           
+                            <td>   <a href="admin/editBuku/{{ $headache->id }}" class="btn btn-wanrning"><i class="fas fa-edit"></i></a>  <a href="/deleteBuku/{{ $headache->id }}" class="btn btn-wanrning"><i class="fas fa-trash"></i></a><a href="{{ asset('storage/' . $headache->dokumen) }}" class="btn btn-wanrning"><i class="fas fa-download"></i></a></td>
+
                         </tr>
 
                         @endforeach

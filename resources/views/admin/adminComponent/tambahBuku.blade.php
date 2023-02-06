@@ -66,14 +66,14 @@
             </div>
             <div class="mb-3">
               <label class="form-label">Deskripsi Buku</label>
-              <textarea name="deskripsi" required class="form-control" cols="30" rows="10" ></textarea>
+              <textarea name="deskripsi" required class="form-control" cols="30" rows="10" value="{{ old('deskripsi') }}"></textarea>
               <span style="color:red">@error('deskripsi'){{ $message }}
                 
                 @enderror</span>
             </div>
             <div class="mb-3">
               <label for="images" class="form-label">Image</label>
-              <input id="images"  autocomplete="off" type="file" class="form-control" name="image" >
+              <input id="images"  autocomplete="off" type="file" class="form-control" value="{{ old('image') }}" name="image" >
               <span style="color:red">@error('image'){{ $message }}
                 
                 @enderror</span>
@@ -90,6 +90,13 @@
                 
               </select>
             </div>
+            <div class="mb-3">
+                <label for="dokumen" class="form-label">Dokumen</label>
+                <input id="dokumen"  autocomplete="off" type="file" class="form-control" name="dokumen" value="{{ old('dokumen') }}" >
+                <span style="color:red">@error('dokumen'){{ $message }}
+                  
+                  @enderror</span>
+              </div>
            
            
             <div class="modal-footer">

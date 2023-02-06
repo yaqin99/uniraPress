@@ -48,12 +48,17 @@ class BukuController extends Controller
             'penerbit' => 'required' , 
             'kategori' => 'required' , 
             'deskripsi' => 'required' , 
-            'image' => 'image|file|max:5024',
+            'image' => 'image|file|max:5024|mimes:jpg,jpeg,png',
+            'dokumen' => 'max:30000|mimes:doc,docx,pdf,ppt,pptx',
         ]);
 
         if ($request->file('image')) {
            $request->file('image')->store('post-image');
            $validatedData['image'] = $request->file('image')->store('post-images');
+        }
+        if ($request->file('dokumen')) {
+           $request->file('dokumen')->store('file-buku');
+           $validatedData['dokumen'] = $request->file('dokumen')->store('file-buku');
         }
 
         $query = DB::table('bukus')->insert([
@@ -63,6 +68,7 @@ class BukuController extends Controller
             'deskripsi' =>$request->input('deskripsi'),
             'tanggal' => Carbon::now(),
             'image' => $validatedData['image'],
+            'dokumen' =>$validatedData['dokumen'],
         ]);
 
         if($query){
