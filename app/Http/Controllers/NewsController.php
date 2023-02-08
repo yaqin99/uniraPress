@@ -92,13 +92,18 @@ class NewsController extends Controller
 
     public function editNews( $id){
         
+        $data = Berita::find($id);
+
+       
+
         $validatedData =  request()->validate([
             'judul_berita' => 'required' , 
             'isi_berita' => 'required' , 
             
 
         ]);
-        $data = Berita::find($id);
+        
+        
         if (request()->kategori != $data->kategori_berita_id) {
             $validatedData['kategori_berita_id'] = request()->kategori ;
         }
@@ -112,7 +117,7 @@ class NewsController extends Controller
             return redirect('/admin/dataBerita')->with('success' , 'Data Berhasil di Update');
         } 
 
-        return dd('gagal');
+        return redirect('/admin/editBerita/'.$id)->with('nothing' , 'Anda Belum Mengubah Apapun');
 
 
     }

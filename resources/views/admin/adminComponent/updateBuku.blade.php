@@ -21,9 +21,9 @@
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
     @endif
-    @if(Session::get('fail'))
-        <div class="alert alert-danger">
-            {{ Session::get('fail') }}
+    @if(Session::get('nothing'))
+        <div class="alert alert-warning">
+            {{ Session::get('nothing') }}
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
     @endif

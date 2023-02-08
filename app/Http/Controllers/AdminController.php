@@ -50,7 +50,8 @@ class AdminController extends Controller
             return redirect('/admin')->with('success' , 'Data Berhasil di Update');
         } 
 
-        return dd('gagal');
+        return redirect('/admin/editBuku/'.$id)->with('nothing' , 'Anda Belum Mengubah Apapun');
+
 
 
     }

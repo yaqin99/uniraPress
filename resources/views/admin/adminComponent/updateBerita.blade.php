@@ -16,9 +16,9 @@
     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 </div>
 @endif
-@if(Session::get('fail'))
-<div class="alert alert-danger">
-    {{ Session::get('fail') }}
+@if(Session::get('nothing'))
+<div class="alert alert-warning">
+    {{ Session::get('nothing') }}
     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 </div>
 @endif
@@ -43,14 +43,14 @@
     @csrf
     <div class="mb-3">
       <label  class="form-label">Judul Berita</label>
-      <input autocomplete="off" required type="text" class="form-control" name="judul_berita" value="{{ old('judul_berita' , $a->judul_berita) }}">
+      <input autocomplete="off" required type="text" class="form-control" name="judul_berita" value="{{  $a->judul_berita }}">
       <span style="color:red">@error('JudulBerita'){{ $message }}
         
       @enderror</span>
     </div>
     <div class="mb-3">
       <label class="form-label">Isi Berita</label>
-      <textarea name="isi_berita" required class="form-control" cols="30" rows="10" >{{ old('isi_berita' , $a->isi_berita) }}</textarea>
+      <textarea name="isi_berita" required class="form-control" cols="30" rows="10" >{{ $a->isi_berita}}</textarea>
       <span style="color:red">@error('isiBerita'){{ $message }}
         
         @enderror</span>
@@ -66,7 +66,7 @@
       <label for="exampleInputPassword1" class="form-label">Pilih Kategori</label>
       <select class="form-select" name="kategori"  aria-label="Default select example">
        
-        <option value="{{ $a->kategori_berita_id }}" selected>{{ $a->kategoriBerita->nama_kategori }}</option>
+        <option value="{{ $a->kategori_berita_id }}" selected>{{ $a->kategoriBerita->nama_kategori}}</option>
         @foreach($kategoriBerita as $k)
         <option value="{{ $k->id }}">{{ $k->nama_kategori }}</option>
         @endforeach
@@ -76,7 +76,7 @@
     </div>
    
     <div class="modal-footer">
-        <button type="submit" class="btn btn-primary" >Update</button>
+        <button type="submit"  class="btn btn-primary" >Update</button>
       </div>
   </form>
 
