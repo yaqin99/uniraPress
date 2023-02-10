@@ -62,7 +62,7 @@ class NewsController extends Controller
             'judul_berita' =>$request->input('judulBerita'), 
             'isi_berita'  =>$request->input('isiBerita'),
             'tanggal' => Carbon::now(),
-            'admin_id' => 1 , 
+            // 'admin_id' => 1 , 
             'kategori_berita_id' =>$request->input('kategori'),
             'image' => $validatedData['foto'],
             'views' => 0 , 

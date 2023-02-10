@@ -399,7 +399,7 @@ a, a:hover {
             </div>
             <div class="postcard__bar"></div>
             <div class="postcard__preview-txt">
-              <p>Oleh <a href="/">Unira Press</a> Diposting pada {{ $a->tanggal }}</p>
+              <p>Oleh <a href="/">Unira Press</a> Diposting pada {{ \Carbon\Carbon::parse($a->tanggal)->isoFormat(' dddd, D MMMM Y') }}</p>
               <p><strong>Kategori : </strong>{{ $a->kategoriBuku->nama_kategori }}</p>
               <p><Strong>Penerbit :</Strong> {{ $a->penerbit }}</p>
             </div>
@@ -465,7 +465,7 @@ a, a:hover {
                     <img src="{{ asset('storage/' . $post->image) }}" class="card-img-top" style="max-height:150px" alt="Gambar Tidak Muncul">
                     <div class="card-body">
                       <h5 class="card-title">{{ $post->nama_buku }}</h5>
-                      <p class="card-text"><i class="bi bi-calendar"></i> Senin, 24 April 2023</p>
+                      <p class="card-text"><i class="bi bi-calendar"></i> {{ \Carbon\Carbon::parse($post->tanggal)->isoFormat(' dddd, D MMMM Y') }}</p>
                       <a href="/detailBuku/{{ $post->id }}" class="btn btn-primary">Baca</a>
                     </div>
                   </div>

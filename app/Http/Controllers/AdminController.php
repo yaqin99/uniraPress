@@ -159,6 +159,7 @@ class AdminController extends Controller
             'name' => 'required' , 
             'email' => 'required',
             'password' => 'required',
+             
         ]);
 
         $validatedData['password'] = bcrypt($validatedData['password']);

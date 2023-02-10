@@ -12,10 +12,10 @@ class BukuController extends Controller
 {
     
     public function index (){
-
-        // dd(request('search'));
-
-        // $buku = ;
+        // $data = Buku::with('kategoriBuku')->SearchBook()->paginate(8)->withQueryString();
+        
+        // $dt = Carbon::parse($post->tanggal)->format('l\\, d F Y');
+        // $dt = Carbon::parse($data->tanggal)->isoFormat('dddd, D MMMM Y');
 
        
         return view('home' , [

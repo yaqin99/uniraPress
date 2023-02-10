@@ -18,7 +18,7 @@ class CreateBeritasTable extends Migration
             $table->string('judul_berita');
             $table->text('isi_berita');
             $table->timestamp('tanggal')->nullable();
-            $table->foreignId('admin_id');
+            // $table->foreignId('admin_id');
             $table->foreignId('kategori_berita_id');
             $table->string('image')->nullable();
             $table->integer('views');

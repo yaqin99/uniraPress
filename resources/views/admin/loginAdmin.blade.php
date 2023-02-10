@@ -30,10 +30,10 @@
                                                 <input class="form-control" id="inputPassword" name="password" required type="text"  />
                                                 <label for="inputPassword">Password</label>
                                             </div>
-                                            <div class="form-check mb-3">
+                                            {{-- <div class="form-check mb-3">
                                                 <input class="form-check-input" id="inputRememberPassword" type="checkbox" value="" />
                                                 <label class="form-check-label" for="inputRememberPassword">Remember Password</label>
-                                            </div>
+                                            </div> --}}
                                             <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
                                                 <a class="small" href="password.html">Forgot Password?</a>
                                                 <button class="btn btn-primary" type="submit" >Login</button>

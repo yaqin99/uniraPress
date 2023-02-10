@@ -102,7 +102,7 @@
                             <img src="{{ asset('storage/' . $post->image) }}" class="card-img-top" style="max-height:150px" alt="Gambar Tidak Muncul">
                             <div class="card-body">
                               <h5 class="card-title">{{ $post->nama_buku }}</h5>
-                              <p class="card-text"><i class="bi bi-calendar"></i> Senin, 24 April 2023</p>
+                              <p class="card-text"><i class="bi bi-calendar"></i> {{\Carbon\Carbon::parse($post->tanggal)->isoFormat(' dddd, D MMMM Y')}}</p>
                               <a href="/detailBuku/{{ $post->id }}" class="btn btn-primary">Baca</a>
                             </div>
                           </div>
@@ -200,24 +200,24 @@
                                 
                                 <ul class="list-unstyled mb-4">
                                     
-                                    <li class="mb-2">
+                                    {{-- <li class="mb-2">
                                         <i class="bi bi-1-circle-fill"></i>
                                         Melakukan Registrasi
                                     </li>
                                     <li class="mb-2">
                                         <i class="bi bi-2-circle-fill"></i>
                                         Login Sebagai User
-                                    </li>
+                                    </li> --}}
                                     <li class="mb-2">
-                                        <i class="bi bi-3-circle-fill"></i>
+                                        <i class="bi bi-1-circle-fill"></i>
                                        Mengisi Formulir Pengajuan
                                     </li>
                                     <li class="mb-2">
-                                        <i class="bi bi-4-circle-fill"></i>
+                                        <i class="bi bi-2-circle-fill"></i>
                                         Menunggu Acc dari Admin
                                     </li>
                                     <li class="mb-2">
-                                        <i class="bi bi-5-circle-fill"></i>
+                                        <i class="bi bi-3-circle-fill"></i>
                                         Pengajuan Selesai
                                     </li>
                                    

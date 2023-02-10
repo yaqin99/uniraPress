@@ -12,8 +12,8 @@
                 
             </ul>
         </li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="/">Buku</a></li>
+        {{-- <li><a href="contact.html">Contact</a></li> --}}
        
     </ul>
 </nav>
