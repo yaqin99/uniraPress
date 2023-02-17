@@ -54,7 +54,7 @@ class NewsController extends Controller
         ]);
         if ($request->file('foto')) {
             $request->file('foto')->store('fotoBerita');
-            $validatedData['foto'] = $request->file('foto')->store('fotoBerita');
+            $validatedData['foto'] = $request->file('foto')->store('/public/fotoBerita');
          }
  
 

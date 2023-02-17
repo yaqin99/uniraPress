@@ -54,11 +54,11 @@ class BukuController extends Controller
 
         if ($request->file('image')) {
            $request->file('image')->store('post-image');
-           $validatedData['image'] = $request->file('image')->store('post-images');
+           $validatedData['image'] = $request->file('image')->store('/public/post-images');
         }
         if ($request->file('dokumen')) {
            $request->file('dokumen')->store('file-buku');
-           $validatedData['dokumen'] = $request->file('dokumen')->store('file-buku');
+           $validatedData['dokumen'] = $request->file('dokumen')->store('/public/file-buku');
         }
 
         $query = DB::table('bukus')->insert([
