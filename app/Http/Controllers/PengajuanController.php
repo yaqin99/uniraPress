@@ -39,4 +39,20 @@ class PengajuanController extends Controller
  
          }
      }
+
+     public function editPengajuan( $id){
+        
+        $data = PengajuanBuku::find($id);
+
+       
+
+        $data->status = "Disetujui";
+        $data->save();
+        
+        return redirect('/admin/dataPengajuan')->with('success' , 'Data Berhasil di Update');
+       
+
+
+
+    }
 }

@@ -22,7 +22,7 @@ class BukuController extends Controller
             'title' => 'home' , 
             'books' => Buku::with('kategoriBuku')->SearchBook()->paginate(8)->withQueryString(),
             'news' => Berita::with('kategoriBerita')->SearchNews()->paginate(4)->withQueryString(),
-            'pengajuan' => PengajuanBuku::all(),
+            'pengajuan' => PengajuanBuku::orderBy('id' , 'desc')->latest()->limit(5)->get(),
 
 
         ]);

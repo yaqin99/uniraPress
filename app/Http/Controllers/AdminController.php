@@ -7,6 +7,7 @@ use App\Models\Buku;
 use App\Models\Berita;
 use App\Models\KategoriBuku;
 use App\Models\KategoriBerita;
+use App\Models\PengajuanBuku;
 use Illuminate\Support\Facades\DB;
 use Symfony\Component\Console\Input\Input;
 use App\Models\User;
@@ -19,6 +20,11 @@ class AdminController extends Controller
         return view('admin.adminComponent.dataBuku', [
             'books' => Buku::all() , 
             'kategori' => KategoriBuku::all(),
+        ]);
+    }
+    public function dataPengajuan(){
+        return view('admin.adminComponent.dataPengajuan', [
+            'pengajuan' => PengajuanBuku::all() , 
         ]);
     }
     public function editBuku($id){

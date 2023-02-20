@@ -38,6 +38,20 @@
                 </div>
                 
                
+                <div class="sb-sidenav-menu-heading">Pengajuan</div>
+                <a class="nav-link collapsed" href="/admin/dataPengajuan" data-bs-toggle="collapse" data-bs-target="#collapsePengajuan" aria-expanded="false" aria-controls="collapseLayouts">
+                    <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                    Data Pengajuan
+                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                </a>
+                <div class="collapse" id="collapsePengajuan" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                    <nav class="sb-sidenav-menu-nested nav">
+                        <a class="nav-link "  href="/admin/dataPengajuan">Pengajuan</a>
+                        
+                    </nav>
+                </div>
+                
+               
              
                 <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
                     <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">

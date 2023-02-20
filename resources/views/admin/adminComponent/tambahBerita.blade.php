@@ -4,7 +4,7 @@
 
 
 
-<h1>Tambah Buku</h1>
+<h1>Tambah Berita</h1>
        
 {{-- <ol class="breadcrumb mb-4">
     <li class="breadcrumb-item active">Dashboard</li>

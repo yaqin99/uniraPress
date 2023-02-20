@@ -214,10 +214,18 @@
                                     </li>
                                     <li class="mb-2">
                                         <i class="bi bi-2-circle-fill"></i>
-                                        Menunggu Acc dari Admin
+                                        Admin Menghubungi Pengaju Via Email
                                     </li>
                                     <li class="mb-2">
                                         <i class="bi bi-3-circle-fill"></i>
+                                        Pengaju Menyetorkan Buku kepada Admin
+                                    </li>
+                                    <li class="mb-2">
+                                        <i class="bi bi-4-circle-fill"></i>
+                                        Menunggu Acc dari Admin
+                                    </li>
+                                    <li class="mb-2">
+                                        <i class="bi bi-5-circle-fill"></i>
                                         Pengajuan Selesai
                                     </li>
                                    
