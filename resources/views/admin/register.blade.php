@@ -19,6 +19,12 @@
                             <div class="col-lg-5">
                                 <div class="card shadow-lg border-0 rounded-lg mt-5">
                                     <div class="card-header"><h3 class="text-center font-weight-light my-4"><img style="width: 15%" src="favicon.png" alt=""></h3></div>
+                                    @if(Session::get('exist'))
+                                    <div class="alert alert-danger">
+                                        {{ Session::get('exist') }}
+                                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                    </div>
+                                     @endif
                                     <div class="card-body">
                                         <form action="/register" method="post">
                                             @csrf

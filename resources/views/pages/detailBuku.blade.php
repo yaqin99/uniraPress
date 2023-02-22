@@ -414,6 +414,10 @@ a, a:hover {
               </p>
               
             </div>
+            <div class="col-6">
+              <a class="btn btn-primary" href="{{ asset('storage/' . $a->dokumen) }}">Download</a>
+            </div>
+            
           </div>
         </article>
         
@@ -459,7 +463,7 @@ a, a:hover {
        
         <div class="row gx-5">
             @foreach($many as $post)
-            <div class="col-lg-4 mb-5 mb-lg-10">
+            <div class="col-lg-6 mb-5 mb-lg-10">
 
                 <div class="card" style="width: 23rem; ">
                     <img src="{{ asset('storage/' . $post->image) }}" class="card-img-top" style="max-height:150px" alt="Gambar Tidak Muncul">

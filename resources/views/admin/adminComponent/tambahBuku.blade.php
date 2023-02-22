@@ -52,14 +52,14 @@
             @csrf
             <div class="mb-3">
               <label for="exampleInputEmail1" class="form-label">Nama Buku</label>
-              <input autocomplete="off" type="text" class="form-control" name="namaBuku" " aria-describedby="emailHelp" value="{{ old('namaBuku') }}">
+              <input autocomplete="off" required type="text" class="form-control" name="namaBuku" " aria-describedby="emailHelp" value="{{ old('namaBuku') }}">
               <span style="color:red">@error('namaBuku'){{ $message }}
                 
               @enderror</span>
             </div>
             <div class="mb-3">
               <label for="exampleInputPassword1" class="form-label">Penerbit</label>
-              <input  autocomplete="off" type="text" class="form-control" name="penerbit" value="{{ old('penerbit') }}">
+              <input  autocomplete="off" required type="text" class="form-control" name="penerbit" value="{{ old('penerbit') }}">
               <span style="color:red">@error('penerbit'){{ $message }}
                 
                 @enderror</span>
@@ -73,14 +73,14 @@
             </div>
             <div class="mb-3">
               <label for="images" class="form-label">Image</label>
-              <input id="images"  autocomplete="off" type="file" class="form-control" value="{{ old('image') }}" name="image" >
+              <input id="images" required autocomplete="off" type="file" class="form-control" value="{{ old('image') }}" name="image" >
               <span style="color:red">@error('image'){{ $message }}
                 
                 @enderror</span>
             </div>
             <div class="mb-3">
               <label for="exampleInputPassword1" class="form-label">Pilih Kategori</label>
-              <select class="form-select" name="kategori"  aria-label="Default select example">
+              <select class="form-select" required name="kategori"  aria-label="Default select example">
                
                 <option selected>Kategori</option>
                 @foreach($kategori as $k)
@@ -92,7 +92,7 @@
             </div>
             <div class="mb-3">
                 <label for="dokumen" class="form-label">Dokumen</label>
-                <input id="dokumen"  autocomplete="off" type="file" class="form-control" name="dokumen" value="{{ old('dokumen') }}" >
+                <input id="dokumen" required  autocomplete="off" type="file" class="form-control" name="dokumen" value="{{ old('dokumen') }}" >
                 <span style="color:red">@error('dokumen'){{ $message }}
                   
                   @enderror</span>

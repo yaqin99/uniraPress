@@ -168,6 +168,13 @@ class AdminController extends Controller
              
         ]);
 
+        $dataAdmin = User::where('name' , $req->name)->first();
+
+        if ($dataAdmin
+        ) {
+            return back()->with('exist' , 'Admin Sudah Ada');
+        }
+
         $validatedData['password'] = bcrypt($validatedData['password']);
 
         $data = User::create($validatedData);

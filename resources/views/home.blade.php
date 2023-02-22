@@ -23,11 +23,11 @@
                 <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner">
                       <div class="carousel-item active" data-bs-interval="2000">
-                        <img src="https://www.swic.edu/wp-content/uploads/2017/09/LIBRARY-0677-002-e1580929246594.jpg" class="d-block w-100" alt="...">
+                        <img src="assets/bg1.jpg" class="d-block w-100" alt="...">
                         
                     </div>
                       <div class="carousel-item" data-bs-interval="2000">
-                        <img src="https://duniaperpustakaan.com/wp-content/uploads/2010/08/fungi-perpustakaan-1023x525.jpg" style="width: 80%" class="d-block w-100 " alt="...">
+                        <img src="assets/bg3.jpg" style="width: 80%" class="d-block w-100 " alt="...">
                       </div>
                      
                     </div>

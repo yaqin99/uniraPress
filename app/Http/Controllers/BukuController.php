@@ -33,7 +33,7 @@ class BukuController extends Controller
     return view('pages.detailBuku' , [
         'title' => 'home' , 
         'books' => $data->with('kategoriBuku')->where('id' , $id)->get(),
-        'many' => $data->latest()->paginate(3) ,
+        'many' => $data->latest()->paginate(2) ,
        
 
     ]);
