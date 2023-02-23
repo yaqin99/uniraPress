@@ -99,6 +99,15 @@ class PengajuanController extends Controller
 
 
     }
+     public function dataPengajuanUser( ){
+      
+      return view('component.dataPengajuanUser' , 
+      [
+         'pengajuan' => PengajuanBuku::orderBy('id' , 'desc')->latest()->SearchPengajuan()->paginate(15)->withQueryString(),
+      ]
+   );
+
+    }
      public function editPengajuanProses( $id){
         
         $data = PengajuanBuku::find($id);

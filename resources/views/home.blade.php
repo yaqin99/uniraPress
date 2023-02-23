@@ -277,9 +277,21 @@
                                     </li>
                                    
                                 </ul>
+                                <div class="mt-5">
+                                    <h3 class="text-center mt-10 ">Cek Pengajuan</h3>
+                                    <div class="col-12 text-center">
+
+                                        <a href="/dataPengajuanUser" class="btn btn-warning">View</a>
+                                    </div>
+                                </div>
+                            </div>
+                            
                             </div>
                         </div>
-                    </div>
+                       
+                      
+                       
+                  
                 </div>
             </div>
         </section>

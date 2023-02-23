@@ -39,6 +39,8 @@ Route::put('/editSuratPermohonan/{id}', [PengajuanController::class , 'editSurat
 Route::get('/editPengajuan/{id}', [PengajuanController::class , 'editPengajuan']);
 Route::get('/editPengajuanProses/{id}', [PengajuanController::class , 'editPengajuanProses']);
 Route::get('/addPermohonan/{id}', [PengajuanController::class , 'addPermohonan']);
+Route::get('/dataPengajuanUser', [PengajuanController::class , 'dataPengajuanUser']);
+
 Route::get('/lempar', function (){
     return back()->with('empty' , 'Surat Permohonan Kosong');
 });
