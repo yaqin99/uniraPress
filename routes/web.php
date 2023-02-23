@@ -21,6 +21,8 @@ use App\Http\Controllers\PengajuanController;
 Route::get('/',[BukuController::class , 'index']);
 Route::get('/news',[NewsController::class , 'news']);
 Route::get('/detailBuku/{id}',[BukuController::class , 'detailBuku']);
+Route::get('/detailPengajuan/{id}',[BukuController::class , 'detailPengajuan']);
+
 Route::get('/detailBerita/{id}',[NewsController::class , 'detailBerita']);
 
 //name('login) ..berarti memberi nama routes karena halaman ini auto redirect ketika ada user mencoba mengakses halaman admin
@@ -33,8 +35,13 @@ Route::post('/login', [LoginController::class , 'authenticate']);
 Route::post('/logout', [LoginController::class , 'logout']);
 Route::put('/editBook/{id}', [AdminController::class , 'editBook'])->middleware('auth');
 Route::put('/editNews/{id}', [NewsController::class , 'editNews'])->middleware('auth');
-Route::put('/editNews/{id}', [NewsController::class , 'editNews'])->middleware('auth');
+Route::put('/editSuratPermohonan/{id}', [PengajuanController::class , 'editSuratPermohonan'])->middleware('auth');
 Route::get('/editPengajuan/{id}', [PengajuanController::class , 'editPengajuan']);
+Route::get('/editPengajuanProses/{id}', [PengajuanController::class , 'editPengajuanProses']);
+Route::get('/addPermohonan/{id}', [PengajuanController::class , 'addPermohonan']);
+Route::get('/lempar', function (){
+    return back()->with('empty' , 'Surat Permohonan Kosong');
+});
 
 
 Route::get('/admin', [AdminController::class , 'homeAdmin'])->middleware('auth');

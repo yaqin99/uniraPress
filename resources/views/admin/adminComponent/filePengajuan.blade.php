@@ -27,13 +27,13 @@
                             <th>No</th>
                             <th>Judul</th>
                             <th>Pemohon</th>
-                            <th>Sampul Depan</th>
-                            <th>Sampul Belakang</th>
-                            <th>Kata Pengantar</th>
+                            <th>Sampul Luar</th>
+                            <th>Sampul Dalam</th>
+                            <th>Prakata</th>
                             <th>Daftar Isi</th>
                             <th>Sinopsis</th>
                             <th>Isi Buku</th>
-                            <th>Daftar Pustaka</th>
+                            {{-- <th>Daftar Pustaka</th> --}}
                             
                         </tr>
                     </thead>
@@ -44,13 +44,13 @@
                             <td>{{ $loop->index +1 }}</td>
                             <td>{{ $a->nama_buku}}</td>
                             <td>{{ $a->nama_pengaju }}</td>
-                            <td><a class="btn btn-primary" href="{{ asset('storage/' . $a->sampul_depan) }}" class="btn btn-wanrning">View</a></td>
-                            <td><a class="btn btn-primary" href="{{ asset('storage/' . $a->sampul_belakang) }}" class="btn btn-wanrning">View</a></td>
-                            <td><a class="btn btn-primary" href="{{ asset('storage/' . $a->kata_pengantar) }}" class="btn btn-wanrning">View</a></td>
+                            <td><a class="btn btn-primary" href="{{ asset('storage/' . $a->sampul_luar) }}" class="btn btn-wanrning">View</a></td>
+                            <td><a class="btn btn-primary" href="{{ asset('storage/' . $a->sampul_dalam) }}" class="btn btn-wanrning">View</a></td>
                             <td><a class="btn btn-primary" href="{{ asset('storage/' . $a->daftar_isi) }}" class="btn btn-wanrning">View</a></td>
+                            <td><a class="btn btn-primary" href="{{ asset('storage/' . $a->prakata) }}" class="btn btn-wanrning">View</a></td>
                             <td><a class="btn btn-primary" href="{{ asset('storage/' . $a->sinopsis) }}" class="btn btn-wanrning">View</a></td>
                             <td><a class="btn btn-primary" href="{{ asset('storage/' . $a->isi_buku) }}" class="btn btn-wanrning">View</a></td>
-                            <td><a class="btn btn-primary" href="{{ asset('storage/' . $a->daftar_pustaka) }}" class="btn btn-wanrning">View</a></td>
+                            {{-- <td><a class="btn btn-primary" href="{{ asset('storage/' . $a->daftar_pustaka) }}" class="btn btn-wanrning">View</a></td> --}}
                             {{-- <td><a class="btn btn-primary" href="/editPengajuan/{{ $a->id }}">Setujui</a></td> --}}
                            
                         </tr>

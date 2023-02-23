@@ -19,27 +19,27 @@ class PengajuanController extends Controller
              'namaPengaju' => 'required' , 
              'emailPengaju' => 'required' , 
              'deskripsi' => 'required' , 
-             'sampul_depan' => 'max:30000|mimes:doc,docx,pdf,ppt,pptx',
-             'sampul_belakang' => 'max:30000|mimes:doc,docx,pdf,ppt,pptx',
-             'kata_pengantar' => 'max:30000|mimes:doc,docx,pdf,ppt,pptx',
+             'sampul_luar' => 'max:30000|mimes:doc,docx,pdf,ppt,pptx',
+             'sampul_dalam' => 'max:30000|mimes:doc,docx,pdf,ppt,pptx',
              'daftar_isi' => 'max:30000|mimes:doc,docx,pdf,ppt,pptx',
+             'prakata' => 'max:30000|mimes:doc,docx,pdf,ppt,pptx',
              'sinopsis' => 'max:30000|mimes:doc,docx,pdf,ppt,pptx',
              'isi_buku' => 'max:30000|mimes:doc,docx,pdf,ppt,pptx',
-             'daftar_pustaka' => 'max:30000|mimes:doc,docx,pdf,ppt,pptx',
+            //  'daftar_pustaka' => 'max:30000|mimes:doc,docx,pdf,ppt,pptx',
 
          ]);
  
-         if ($request->file('sampul_depan')) {
-            $request->file('sampul_depan')->store('file_pengajuan');
-            $validatedData['sampul_depan'] = $request->file('sampul_depan')->store('/public/file-pengajuan');
+         if ($request->file('sampul_luar')) {
+            $request->file('sampul_luar')->store('file_pengajuan');
+            $validatedData['sampul_luar'] = $request->file('sampul_luar')->store('/public/file-pengajuan');
          }
-         if ($request->file('sampul_belakang')) {
-            $request->file('sampul_belakang')->store('file_pengajuan');
-            $validatedData['sampul_belakang'] = $request->file('sampul_belakang')->store('/public/file-pengajuan');
+         if ($request->file('sampul_dalam')) {
+            $request->file('sampul_dalam')->store('file_pengajuan');
+            $validatedData['sampul_dalam'] = $request->file('sampul_dalam')->store('/public/file-pengajuan');
          }
-         if ($request->file('kata_pengantar')) {
-            $request->file('kata_pengantar')->store('file_pengajuan');
-            $validatedData['kata_pengantar'] = $request->file('kata_pengantar')->store('/public/file-pengajuan');
+         if ($request->file('prakata')) {
+            $request->file('prakata')->store('file_pengajuan');
+            $validatedData['prakata'] = $request->file('prakata')->store('/public/file-pengajuan');
          }
          if ($request->file('daftar_isi')) {
             $request->file('daftar_isi')->store('file_pengajuan');
@@ -53,10 +53,10 @@ class PengajuanController extends Controller
             $request->file('isi_buku')->store('file_pengajuan');
             $validatedData['isi_buku'] = $request->file('isi_buku')->store('/public/file-pengajuan');
          }
-         if ($request->file('daftar_pustaka')) {
-            $request->file('daftar_pustaka')->store('file_pengajuan');
-            $validatedData['daftar_pustaka'] = $request->file('daftar_pustaka')->store('/public/file-pengajuan');
-         }
+         // if ($request->file('daftar_pustaka')) {
+         //    $request->file('daftar_pustaka')->store('file_pengajuan');
+         //    $validatedData['daftar_pustaka'] = $request->file('daftar_pustaka')->store('/public/file-pengajuan');
+         // }
         
         
          $query = DB::table('pengajuan_bukus')->insert([
@@ -65,15 +65,15 @@ class PengajuanController extends Controller
             'email' =>$request->input('emailPengaju'),
             
             'tanggal' => Carbon::now(),
-            'sampul_depan' =>$validatedData['sampul_depan'],
-            'sampul_belakang' =>$validatedData['sampul_belakang'],
-            'kata_pengantar' =>$validatedData['kata_pengantar'],
+            'sampul_luar' =>$validatedData['sampul_luar'],
+            'sampul_dalam' =>$validatedData['sampul_dalam'],
+            'prakata' =>$validatedData['prakata'],
             'daftar_isi' =>$validatedData['daftar_isi'],
             'sinopsis' =>$validatedData['sinopsis'],
             'isi_buku' =>$validatedData['isi_buku'],
-            'daftar_pustaka' =>$validatedData['daftar_pustaka'],
+            // 'daftar_pustaka' =>$validatedData['daftar_pustaka'],
             'deskripsi' =>$request->input('deskripsi'),
-            'status' => 'Proses'
+            'status' => 'Pengajuan'
          ]);
  
          if($query){
@@ -99,4 +99,64 @@ class PengajuanController extends Controller
 
 
     }
+     public function editPengajuanProses( $id){
+        
+        $data = PengajuanBuku::find($id);
+
+       
+
+        $data->status = "Proses";
+        $data->save();
+        
+        return redirect('/admin/dataPengajuan')->with('success' , 'Data Berhasil di Update');
+       
+
+
+
+    }
+     public function editSuratPermohonan( $id){
+        
+        $data = PengajuanBuku::find($id);
+
+        $validatedData = request()->validate([
+         'surat_permohonan' => 'required',
+        ]);
+
+        if (request()->file('surat_permohonan')) {
+         request()->file('surat_permohonan')->store('file_pengajuan');
+         $validatedData['surat_permohonan'] = request()->file('surat_permohonan')->store('/public/file-pengajuan');
+      }
+
+        $data->surat_permohonan = $validatedData['surat_permohonan'];
+        $data->save();
+        
+        return redirect('/admin/dataPengajuan')->with('success' , 'Data Berhasil di Update');
+       
+
+
+
+    }
+     public function editPermohonan( $id){
+        
+        $data = PengajuanBuku::find($id);
+
+       
+
+        $data->status = "Proses";
+        $data->save();
+        
+        return redirect('/admin/dataPengajuan')->with('success' , 'Data Berhasil di Update');
+       
+
+
+
+    }
+    public function addPermohonan($id){
+      $data = PengajuanBuku::find($id);
+      return view('admin.adminComponent.addPermohonan', [
+            'peng' => $data,
+      ]);
+  }
+
+
 }

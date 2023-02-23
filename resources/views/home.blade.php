@@ -183,26 +183,27 @@
                                     @csrf
                                     {{-- TANPA CSRF AKAN MENYEBABKAN PAGE EXPIRED --}}
                                     <div class="mb-3">
-                                        <label for="dokumen" class="form-label">Sampul Depan</label>
-                                        <input id="dokumen" required  autocomplete="off" type="file" class="form-control" name="sampul_depan" value="{{ old('sampul_depan') }}" >
+                                        <label for="dokumen" class="form-label">Sampul Luar</label>
+                                        <input id="dokumen" required  autocomplete="off" type="file" class="form-control" name="sampul_luar" value="{{ old('sampul_luar') }}" >
                                         
                                       </div>
                                     <div class="mb-3">
-                                        <label for="dokumen" class="form-label">Sampul Belakang</label>
-                                        <input id="dokumen" required  autocomplete="off" type="file" class="form-control" name="sampul_belakang" value="{{ old('sampul_belakang') }}" >
+                                        <label for="dokumen" class="form-label">Sampul Dalam</label>
+                                        <input id="dokumen" required  autocomplete="off" type="file" class="form-control" name="sampul_dalam" value="{{ old('sampul_dalam') }}" >
                                         
                                       </div>
                                     <!-- Email address input-->
                                     <div class="mb-3">
-                                        <label for="kata_Pengantar" class="form-label">Kata Pengantar</label>
-                                        <input id="kata_Pengantar" required  autocomplete="off" type="file" class="form-control" name="kata_pengantar" value="{{ old('kata_pengantar') }}" >
-                                       
-                                      </div>
-                                    <div class="mb-3">
                                         <label for="daftar_isi" class="form-label">Daftar Isi</label>
                                         <input id="daftar_isi" required  autocomplete="off" type="file" class="form-control" name="daftar_isi" value="{{ old('daftar_isi') }}" >
                                        
-                                      </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="kata_Pengantar" class="form-label">Prakata</label>
+                                        <input id="kata_Pengantar" required  autocomplete="off" type="file" class="form-control" name="prakata" value="{{ old('prakata') }}" >
+                                       
+                                    </div>
+                                    
                                     <!-- Phone number input-->
                                     <div class="mb-3">
                                         <label for="sinopsis" class="form-label">Sinopsis</label>
@@ -214,11 +215,11 @@
                                         <input id="isi_buku" required  autocomplete="off" type="file" class="form-control" name="isi_buku" value="{{ old('isi_buku') }}" >
                                         <span style="color:red">
                                       </div>
-                                    <div class="mb-3">
-                                        <label for="daftar_pustaka" class="form-label">Daftar Pustaka</label>
+                                    {{-- <div class="mb-3">
+                                        <label for="daftar_pustaka" class="form-label">Surat Permohonan</label>
                                         <input id="daftar_pustaka" required  autocomplete="off" type="file" class="form-control" name="daftar_pustaka" value="{{ old('daftar_pustaka') }}" >
                                         <span style="color:red">
-                                      </div>
+                                      </div> --}}
                                     <!-- Message input-->
                                     
                                     <!-- Submit success message-->

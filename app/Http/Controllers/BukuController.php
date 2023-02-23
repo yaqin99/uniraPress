@@ -37,7 +37,17 @@ class BukuController extends Controller
        
 
     ]);
-    
+    }
+    public function detailPengajuan($id){
+        $data = PengajuanBuku::find($id);
+    //    $delete =  $data->delete();
+    return view('pages.detailPengajuan' , [
+        'title' => 'home' , 
+        'books' => $data->where('id' , $id)->get(),
+        // 'many' => $data->latest()->paginate(2) ,
+       
+
+    ]);
     }
 
     public function addBook(Request $request){
