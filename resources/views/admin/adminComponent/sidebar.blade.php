@@ -47,6 +47,7 @@
                 <div class="collapse" id="collapsePengajuan" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                     <nav class="sb-sidenav-menu-nested nav">
                         <a class="nav-link "  href="/admin/dataPengajuan">Pengajuan</a>
+                        <a class="nav-link "  href="/admin/filePengajuan">Data Pengajuan</a>
                         
                     </nav>
                 </div>

@@ -27,6 +27,11 @@ class AdminController extends Controller
             'pengajuan' => PengajuanBuku::all() , 
         ]);
     }
+    public function filePengajuan(){
+        return view('admin.adminComponent.filePengajuan', [
+            'files' => PengajuanBuku::all() , 
+        ]);
+    }
     public function editBuku($id){
         $data = Buku::find($id);
         return view('admin.adminComponent.updateBuku' , [

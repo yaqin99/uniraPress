@@ -128,7 +128,7 @@
                             
                             <h3 class="text-center mt-10 ">Formulir Pengajuan</h3>
                             <div class="card-body p-5">
-                                <form method="POST" action="addPengajuan">
+                            <form method="POST" action="addPengajuan" enctype="multipart/form-data">
                                     <!-- Name input-->
                                     @csrf
                                     {{-- TANPA CSRF AKAN MENYEBABKAN PAGE EXPIRED --}}
@@ -167,27 +167,73 @@
                                     <!-- an error submitting the form-->
                                     <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
                                     <!-- Submit Button-->
-                                    <div class="d-grid"><button class="btn btn-primary btn-lg "  type="submit">Konfirmasi</button></div>
-                                </form>
+                                    
+                                
                             </div>
                         </div>
                     </div>
                     <!-- Pricing card pro-->
                     <div class="col-lg-6 col-xl-4">
                         <div class="card mb-5 mb-xl-0">
-                            <h3 class="text-center mt-10 ">Status </h3>
+                            
+                            <h3 class="text-center mt-10 ">File Dokumen</h3>
                             <div class="card-body p-5">
-
-                               
-                                <ul class="list-unstyled mb-4">
-                                    @foreach($pengajuan as $pe)
+                                
+                                    <!-- Name input-->
+                                    @csrf
+                                    {{-- TANPA CSRF AKAN MENYEBABKAN PAGE EXPIRED --}}
+                                    <div class="mb-3">
+                                        <label for="dokumen" class="form-label">Sampul Depan</label>
+                                        <input id="dokumen" required  autocomplete="off" type="file" class="form-control" name="sampul_depan" value="{{ old('sampul_depan') }}" >
                                         
-                                    <li class="mb-2">
-                                        <i class="bi bi-check text-primary"></i>
-                                        {{ $pe->nama_buku. ' ' .'('.$pe->status.')' }}
-                                    </li>
-                                    @endforeach
-                                </ul>
+                                      </div>
+                                    <div class="mb-3">
+                                        <label for="dokumen" class="form-label">Sampul Belakang</label>
+                                        <input id="dokumen" required  autocomplete="off" type="file" class="form-control" name="sampul_belakang" value="{{ old('sampul_belakang') }}" >
+                                        
+                                      </div>
+                                    <!-- Email address input-->
+                                    <div class="mb-3">
+                                        <label for="kata_Pengantar" class="form-label">Kata Pengantar</label>
+                                        <input id="kata_Pengantar" required  autocomplete="off" type="file" class="form-control" name="kata_pengantar" value="{{ old('kata_pengantar') }}" >
+                                       
+                                      </div>
+                                    <div class="mb-3">
+                                        <label for="daftar_isi" class="form-label">Daftar Isi</label>
+                                        <input id="daftar_isi" required  autocomplete="off" type="file" class="form-control" name="daftar_isi" value="{{ old('daftar_isi') }}" >
+                                       
+                                      </div>
+                                    <!-- Phone number input-->
+                                    <div class="mb-3">
+                                        <label for="sinopsis" class="form-label">Sinopsis</label>
+                                        <input id="sinopsis" required  autocomplete="off" type="file" class="form-control" name="sinopsis" value="{{ old('sinopsis') }}" >
+                                        <span style="color:red">
+                                      </div>
+                                    <div class="mb-3">
+                                        <label for="isi_buku" class="form-label">Isi Buku</label>
+                                        <input id="isi_buku" required  autocomplete="off" type="file" class="form-control" name="isi_buku" value="{{ old('isi_buku') }}" >
+                                        <span style="color:red">
+                                      </div>
+                                    <div class="mb-3">
+                                        <label for="daftar_pustaka" class="form-label">Daftar Pustaka</label>
+                                        <input id="daftar_pustaka" required  autocomplete="off" type="file" class="form-control" name="daftar_pustaka" value="{{ old('daftar_pustaka') }}" >
+                                        <span style="color:red">
+                                      </div>
+                                    <!-- Message input-->
+                                    
+                                    <!-- Submit success message-->
+                                    <!---->
+                                    <!-- This is what your users will see when the form-->
+                                    <!-- has successfully submitted-->
+                                  
+                                    <!-- Submit error message-->
+                                    <!---->
+                                    <!-- This is what your users will see when there is-->
+                                    <!-- an error submitting the form-->
+                                    <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
+                                    <!-- Submit Button-->
+                                    <div class="d-grid"><button class="btn btn-primary btn-lg "  type="submit">Konfirmasi</button></div>
+                                </form>
                             </div>
                         </div>
                     </div>

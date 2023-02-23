@@ -33,6 +33,7 @@ Route::post('/login', [LoginController::class , 'authenticate']);
 Route::post('/logout', [LoginController::class , 'logout']);
 Route::put('/editBook/{id}', [AdminController::class , 'editBook'])->middleware('auth');
 Route::put('/editNews/{id}', [NewsController::class , 'editNews'])->middleware('auth');
+Route::put('/editNews/{id}', [NewsController::class , 'editNews'])->middleware('auth');
 Route::get('/editPengajuan/{id}', [PengajuanController::class , 'editPengajuan']);
 
 
@@ -43,6 +44,7 @@ Route::get('/admin/tambahBuku', [AdminController::class , 'tambahBuku'])->middle
 Route::get('/admin/tambahKategoriBuku', [AdminController::class , 'tambahKategoriBuku'])->middleware('auth');
 Route::get('/admin/dataBerita', [AdminController::class , 'dataBerita']);
 Route::get('/admin/dataPengajuan', [AdminController::class , 'dataPengajuan']);
+Route::get('/admin/filePengajuan', [AdminController::class , 'filePengajuan']);
 Route::get('/admin/tambahKategoriBerita', [AdminController::class , 'tambahKategoriBerita'])->middleware('auth');
 Route::get('/admin/tambahBerita', [AdminController::class , 'tambahBerita'])->middleware('auth');
 

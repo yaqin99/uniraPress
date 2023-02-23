@@ -19,6 +19,14 @@ class CreatePengajuanBuku extends Migration
             $table->string('nama_pengaju');
             $table->string('email');
             $table->timestamp('tanggal')->nullable();
+            $table->string('sampul_depan')->nullable();
+            $table->string('sampul_belakang')->nullable();
+            $table->string('kata_pengantar')->nullable();
+            $table->string('daftar_isi')->nullable();
+            $table->string('sinopsis')->nullable();
+            $table->string('isi_buku')->nullable();
+            $table->string('daftar_pustaka')->nullable();
+
             $table->text('deskripsi');
             $table->string('status');
             $table->timestamps();
