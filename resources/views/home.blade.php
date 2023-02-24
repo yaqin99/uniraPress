@@ -146,7 +146,7 @@
                                     </div>
                                     <!-- Phone number input-->
                                     <div class="form-floating mb-3">
-                                        <input class="form-control" name="namaBuku" id="phone" type="tel" placeholder="(123) 456-7890" data-sb-validations="required" />
+                                        <input class="form-control" name="namaBuku" id="nama_buku" type="text" placeholder="Masukan Judul Buku ..." data-sb-validations="required" />
                                         <label for="phone">Nama Buku</label>
                                         <div class="invalid-feedback" data-sb-feedback="phone:required">Nama Buku harus diisi.</div>
                                     </div>
